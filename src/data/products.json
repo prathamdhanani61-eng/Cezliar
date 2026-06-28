@@ -1,0 +1,241 @@
+[
+  {
+    "id": "attar-1",
+    "name": "Oud Majestic Attar",
+    "slug": "oud-majestic-attar",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Attar",
+    "price": 1249,
+    "image": "/images/products/oud-majestic.webp",
+    "description": "A deeply rich and majestic attar that captures the essence of pure luxury. Made with the finest natural ingredients, this scent boasts a complex profile of warm woody undertones, sweet spices, and deep mystical agarwood.",
+    "benefits": [
+      "Extremely long-lasting concentrated oil fragrance (up to 12 hours)",
+      "100% alcohol-free formulation, gentle on all skin types",
+      "Sourced using wild-harvested, aged Indian Oud oil",
+      "Comes in a premium hand-cut crystal bottle with gold detailing"
+    ],
+    "specifications": {
+      "Volume": "12ml",
+      "Type": "Concentrated Perfume Oil (Attar)",
+      "Application": "Roll-on / Glass Applicator",
+      "Origin": "Kannauj, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Apply directly to pulse points (wrists, neck, and behind ears).",
+      "Gently dab onto clothing (fabrics absorb the oil for multi-day longevity).",
+      "Layer with other lighter floral scents for a custom royal fragrance profile."
+    ],
+    "faqs": [
+      {
+        "question": "Is this attar safe to use directly on skin?",
+        "answer": "Yes, our attars are 100% alcohol-free and formulated with natural, skin-safe essential oils and carrier oils."
+      },
+      {
+        "question": "How long does the scent last?",
+        "answer": "Due to its high concentration of pure oils, Oud Majestic lasts for 8 to 12 hours on skin and up to 48 hours on fabric."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": true,
+    "isBestSeller": true
+  },
+  {
+    "id": "attar-2",
+    "name": "Rose Damascena Attar",
+    "slug": "rose-damascena-attar",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Attar",
+    "price": 999,
+    "image": "/images/products/rose-damascena.webp",
+    "description": "The pure essence of damask rose, carefully extracted through traditional hydro-distillation for an elegant, deep floral scent. Perfect for everyday wear or special occasions when you want to feel elevated.",
+    "benefits": [
+      "Pure organic hydro-distilled Damask Rose extract",
+      "Deeply calming aromatherapy properties that reduce stress",
+      "Alcohol-free and completely free from synthetic compounds",
+      "Subtle sweet honey undertones that unfold over hours"
+    ],
+    "specifications": {
+      "Volume": "12ml",
+      "Type": "Concentrated Perfume Oil (Attar)",
+      "Application": "Roll-on",
+      "Origin": "Hasanpur, India",
+      "Scent Family": "Rich Floral"
+    },
+    "applications": [
+      "Roll onto pulse points and rub gently to warm up the molecules.",
+      "Add a few drops to an oil diffuser for an exquisite room scenting.",
+      "Rub a small dab onto your palms and run through your beard or hair for a lasting aura."
+    ],
+    "faqs": [
+      {
+        "question": "What is the shelf life of this attar?",
+        "answer": "Our pure attars have no expiration date. In fact, like fine wine, aged attars mature and smell richer over time when stored in cool, dark environments."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "dhoop-1",
+    "name": "Sandalwood Premium Dhoop",
+    "slug": "sandalwood-premium-dhoop",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 349,
+    "image": "/images/products/sandalwood-dhoop.webp",
+    "description": "Purify your space with the calming and spiritual scent of pure Mysore sandalwood. These premium dhoop sticks create a serene environment ideal for meditation, yoga, and stress relief.",
+    "benefits": [
+      "Crafted with 100% natural sandalwood paste and essential oils",
+      "Charcoal-free formulation results in non-toxic, cleaner smoke",
+      "Burn time of 40-45 minutes with a scent that lingers for hours",
+      "Includes a handmade ceramic holder in every pack"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 45 mins",
+      "Ingredients": "Natural Sandalwood powder, resins, natural gums, essential oils",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Mysore, India"
+    },
+    "applications": [
+      "Place a dhoop stick securely in the provided ceramic holder.",
+      "Light the tip until it catches flame, then gently blow it out to leave a glowing ember.",
+      "Keep away from drafty areas, children, and flammable materials."
+    ],
+    "faqs": [
+      {
+        "question": "Is this dhoop safe for indoor use?",
+        "answer": "Yes, our dhoop sticks are charcoal-free and organic, meaning they produce zero harmful black carbon smoke and are safe for indoor ventilation."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": true,
+    "isBestSeller": false
+  },
+  {
+    "id": "dhoop-2",
+    "name": "Jasmine Meditation Dhoop",
+    "slug": "jasmine-meditation-dhoop",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/jasmine-dhoop.webp",
+    "description": "An uplifting and floral dhoop stick set made with natural jasmine flowers and botanical extracts. Brings the fresh, sweet, and comforting scent of jasmine blossoms inside your home.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": false,
+    "isBestSeller": true
+  },
+  {
+    "id": "drain-1",
+    "name": "CEZLIAR Pro Drain Opener",
+    "slug": "cezliar-pro-drain-opener",
+    "mainCategory": "Home Care",
+    "subCategory": "Drain Opener",
+    "price": 199,
+    "image": "/images/products/drain-opener.webp",
+    "description": "An industrial-grade, ultra-powerful drain cleaning solution designed to dissolve hair, grease, soap scum, and organic blockages in minutes. Safe for all piping systems and septic tanks.",
+    "benefits": [
+      "Fast-acting formula clears heavy blockages in under 15 minutes",
+      "Dissolves hair, grease, food waste, and toilet paper effortlessly",
+      "Safe for PVC, copper, steel, iron, and septic system designs",
+      "Contains built-in odor neutralizers to eliminate foul sink smells"
+    ],
+    "specifications": {
+      "Volume": "1 Litre",
+      "Type": "Concentrated Liquid Gel",
+      "Safety cap": "Child-resistant push & turn cap",
+      "Suitable For": "Sinks, showers, bathtubs, kitchen drains",
+      "PH Level": "Alkaline active"
+    },
+    "applications": [
+      "Pour 250ml of Pro Drain Opener directly into the clogged drain.",
+      "Let it sit for 15-20 minutes (for heavy clogs, leave for 30 minutes).",
+      "Flush thoroughly with plenty of hot water."
+    ],
+    "faqs": [
+      {
+        "question": "Can I use this in my toilet?",
+        "answer": "Yes, but for toilets we recommend letting it sit for 30 minutes before flushing, as the water volume dilutes the product."
+      },
+      {
+        "question": "Will it damage plastic pipes?",
+        "answer": "No. Our formulation is specifically engineered to be safe on all PVC, copper, and iron plumbing."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": false,
+    "isBestSeller": true
+  },
+  {
+    "id": "filter-1",
+    "name": "Advanced Aqua Filter System",
+    "slug": "advanced-aqua-filter-system",
+    "mainCategory": "Home Care",
+    "subCategory": "Water Filter",
+    "price": 14999,
+    "image": "/images/products/water-filter.webp",
+    "description": "A state-of-the-art multi-stage home water filtration system that combines sediment pre-filters, activated carbon blocks, and ultra-filtration membranes to deliver pure, crisp, and alkaline drinking water.",
+    "benefits": [
+      "9-stage filtration removes 99.9% of chlorine, heavy metals, and micro-particles",
+      "Under-sink compact layout saves valuable kitchen counter space",
+      "Re-mineralization cartridge restores essential calcium and magnesium ions",
+      "Includes a premium lead-free solid brass designer faucet"
+    ],
+    "specifications": {
+      "Dimensions": "35cm x 15cm x 40cm",
+      "Flow Rate": "2.5 Litres per minute",
+      "Filter Life": "6000 Litres (approx. 1 year)",
+      "Power Required": "None (operates on standard water pressure)",
+      "Certifications": "NSF/ANSI Standard 53 & 58"
+    },
+    "applications": [
+      "Install under the kitchen sink connected to the cold water supply line.",
+      "Mount the dedicated premium tap on the sink counter.",
+      "Replace filter cartridges easily once a year with the twist-and-lock mechanism."
+    ],
+    "faqs": [
+      {
+        "question": "Do I need professional installation?",
+        "answer": "The system comes with a complete DIY installation kit and step-by-step video guide. Most users install it themselves in under 45 minutes."
+      },
+      {
+        "question": "Does this system waste water like RO filters?",
+        "answer": "No, this is an advanced UF + Carbon system which produces zero wastewater, making it eco-friendly and efficient."
+      }
+    ],
+    "amazon": "https://www.amazon.in",
+    "flipkart": "https://www.flipkart.com",
+    "isNewArrival": true,
+    "isBestSeller": true
+  }
+]

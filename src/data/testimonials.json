@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Aishwarya Sen",
+    "role": "Verified Buyer",
+    "location": "Mumbai",
+    "rating": 5,
+    "review": "The Oud Majestic Attar is absolutely divine. It has this rich, deep aroma that lasts all day long and feels extremely premium. I've received so many compliments!"
+  },
+  {
+    "id": 2,
+    "name": "Rajesh Kumar",
+    "role": "Yoga Practitioner",
+    "location": "Bangalore",
+    "rating": 5,
+    "review": "I use the Sandalwood Premium Dhoop daily during my meditation sessions. The fact that it is charcoal-free and has zero toxic smoke makes it perfect for indoor use."
+  },
+  {
+    "id": 3,
+    "name": "Vikram Rathore",
+    "role": "Verified Buyer",
+    "location": "Delhi",
+    "rating": 5,
+    "review": "Usually drain cleaners have a terrible, suffocating smell. But the CEZLIAR Pro Drain Opener works instantly and actually leaves a clean smell. High performance home care!"
+  },
+  {
+    "id": 4,
+    "name": "Priyanka Sharma",
+    "role": "Interior Designer",
+    "location": "Jaipur",
+    "rating": 5,
+    "review": "The aesthetic packaging alone makes CEZLIAR worth it. It looks like a high-end luxury brand in my house, and the products perform exceptionally well."
+  }
+]
