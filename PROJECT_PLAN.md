@@ -160,6 +160,12 @@ Product Slider.
 
 ---
 
+### Brand Story
+
+Luxury section with image and text.
+
+---
+
 ### Why Choose CEZLIAR
 
 Icons:
@@ -173,19 +179,13 @@ Icons:
 
 ---
 
-### Brand Story
-
-Luxury section with image and text.
-
----
-
 ### Customer Reviews
 
 Auto slider.
 
 ---
 
-### Instagram Gallery
+### Lifestyle Gallery
 
 Grid.
 

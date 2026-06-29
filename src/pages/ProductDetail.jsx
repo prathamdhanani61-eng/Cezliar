@@ -6,11 +6,15 @@ import { getProductById, getProductsBySubCategory } from '../data/products';
 import Button from '../components/Button';
 import ProductCard from '../components/ProductCard';
 import { useSEO } from '../hooks/useSEO';
+import { formatMarketplaceUrl } from '../utils/url';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id);
   const [activeTab, setActiveTab] = useState('description');
+
+  const amazonUrl = product ? formatMarketplaceUrl(product.amazon) : '';
+  const flipkartUrl = product ? formatMarketplaceUrl(product.flipkart) : '';
 
   useSEO({
     title: product ? product.name : 'Product Details',
@@ -124,32 +128,38 @@ const ProductDetail = () => {
               </p>
 
               {/* Marketplace Buy Actions */}
-              <div className="bg-section p-6 rounded-3xl border border-gold/10 mb-10">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-gold" /> Authorized Marketplace Purchasing
-                </h3>
-                <p className="text-xs text-gray-500 font-body mb-6 leading-relaxed">
-                  To ensure premium quality and secure shipping, CEZLIAR products are sold exclusively through our official brand store listings on Amazon and Flipkart.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <a
-                    href={product.amazon}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-[#232F3E] hover:bg-black text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
-                  >
-                    Buy on Amazon <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                  <a
-                    href={product.flipkart}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-[#2874F0] hover:bg-[#1a5bbf] text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
-                  >
-                    Buy on Flipkart <ArrowUpRight className="w-4 h-4" />
-                  </a>
+              {(amazonUrl || flipkartUrl) && (
+                <div className="bg-section p-6 rounded-3xl border border-gold/10 mb-10">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-gold" /> Authorized Marketplace Purchasing
+                  </h3>
+                  <p className="text-xs text-gray-500 font-body mb-6 leading-relaxed">
+                    To ensure premium quality and secure shipping, CEZLIAR products are sold exclusively through our official brand store listings on Amazon and Flipkart.
+                  </p>
+                  <div className={`grid grid-cols-1 ${amazonUrl && flipkartUrl ? 'sm:grid-cols-2' : ''} gap-4`}>
+                    {amazonUrl && (
+                      <a
+                        href={amazonUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 bg-[#232F3E] hover:bg-black text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+                      >
+                        Buy on Amazon <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    )}
+                    {flipkartUrl && (
+                      <a
+                        href={flipkartUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 bg-[#2874F0] hover:bg-[#1a5bbf] text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+                      >
+                        Buy on Flipkart <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Trust badges */}
               <div className="grid grid-cols-2 gap-4 py-6 border-t border-b border-gray-100 mb-10">

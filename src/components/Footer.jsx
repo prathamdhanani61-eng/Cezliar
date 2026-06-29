@@ -9,7 +9,13 @@ const Footer = () => {
           
           {/* Brand Info */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-heading font-bold text-white tracking-widest uppercase">CEZLIAR</h3>
+            <Link to="/" className="inline-block">
+              <img
+                src="/images/logo/logo.png"
+                alt="CEZLIAR Logo"
+                className="h-8 object-contain brightness-0 invert"
+              />
+            </Link>
             <p className="text-sm leading-relaxed text-gray-400">
               The pinnacle of premium fragrance and home care. Experience luxury in every drop, designed for the modern connoisseur.
             </p>
@@ -41,10 +47,10 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-heading font-bold text-gold tracking-wider">Collections</h4>
             <ul className="space-y-3">
-              <li><Link to="/fragrance-world/attar" className="hover:text-white transition-colors duration-200">Premium Attar</Link></li>
-              <li><Link to="/fragrance-world/dhoop" className="hover:text-white transition-colors duration-200">Luxury Dhoop</Link></li>
-              <li><Link to="/home-care/drain-opener" className="hover:text-white transition-colors duration-200">Pro Drain Opener</Link></li>
-              <li><Link to="/home-care/water-filter" className="hover:text-white transition-colors duration-200">Water Filtration</Link></li>
+              <li><Link to="/collections/fragrance-collection/attars" className="hover:text-white transition-colors duration-200">Premium Attar</Link></li>
+              <li><Link to="/collections/fragrance-collection/dhoop" className="hover:text-white transition-colors duration-200">Luxury Dhoop</Link></li>
+              <li><Link to="/collections/home-care-collection/drain-cleaner" className="hover:text-white transition-colors duration-200">Pro Drain Opener</Link></li>
+              <li><Link to="/collections/water-care-collection" className="hover:text-white transition-colors duration-200">Water Filtration</Link></li>
             </ul>
           </div>
 
