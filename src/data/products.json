@@ -1,13 +1,13 @@
 [
   {
     "id": "attar-1",
-    "name": "Oud Majestic Attar",
-    "slug": "oud-majestic-attar",
+    "name": "Musk Rijali Attar Roll-On Perfume Oil 6 ml",
+    "slug": "musk-rijali-attar-roll-on-perfume-oil-6-ml",
     "mainCategory": "Fragrance World",
     "subCategory": "Attar",
-    "price": 1249,
-    "image": "/images/products/oud-majestic.webp",
-    "description": "A deeply rich and majestic attar that captures the essence of pure luxury. Made with the finest natural ingredients, this scent boasts a complex profile of warm woody undertones, sweet spices, and deep mystical agarwood.",
+    "price": 599,
+    "image": "/images/products/Attar/MuskRijali/1.jpg",
+    "description": "Discover the timeless richness of CEZLIAR Musk Rijali Attar. Crafted with premium perfume oils, this alcohol-free roll-on delivers a warm, woody fragrance with exceptional longevity. Perfect for daily wear, special occasions, and those who appreciate classic elegance in every drop.",
     "benefits": [
       "Extremely long-lasting concentrated oil fragrance (up to 12 hours)",
       "100% alcohol-free formulation, gentle on all skin types",
@@ -15,10 +15,10 @@
       "Comes in a premium hand-cut crystal bottle with gold detailing"
     ],
     "specifications": {
-      "Volume": "12ml",
+      "Volume": "6 ml",
       "Type": "Concentrated Perfume Oil (Attar)",
       "Application": "Roll-on / Glass Applicator",
-      "Origin": "Kannauj, India",
+      "Origin": "Surat Gujarat, India",
       "Scent Family": "Woody Oriental"
     },
     "applications": [
@@ -36,58 +36,125 @@
         "answer": "Due to its high concentration of pure oils, Oud Majestic lasts for 8 to 12 hours on skin and up to 48 hours on fabric."
       }
     ],
-    "amazon": "https://www.amazon.in",
-    "flipkart": "https://www.flipkart.com",
+    "amazon": "https://www.amazon.in/CEZLIAR-Perfume-Alcohol-Free-Masculine-Fragrance/dp/B0GFDBG6D8/ref=sr_1_5?crid=12C7L2DDWJEXV&dib=eyJ2IjoiMSJ9.gYiPcDTuG3RpZsuhRL1gKYJarn0Ve4kNGUdFWGKD0YcAByyZvEw4JCxmEJOz2Ok586p8SdPgSs9ftBWivLL5ubbVGEvOV-txB39b4uJIzjL2zAJKaOLQm_v8ctmWS8ovRzK5FbfRLfnHnDixCcb_cbft1utCiwpNBl6LxoDGOB8mcczNf7FmemjRWcmys1H1wKauE_AxJoXo3IZRGeI-IbZXF3r2hfzT1AJXNatI5KD7NQZxusKhUHwD7TRet89c7zSWVSGm9JzypuxRjafYTPixLTp_rSvHXHIN6Pw0Saw.kIi1D_3QsvJ_gQEeXJW3YQA0j45KdvU10LoT5NhKRAA&dib_tag=se&keywords=cezliar+attar&qid=1784047038&sprefix=cezliar+%2Caps%2C228&sr=8-5",
+    "flipkart": "https://www.flipkart.com/cezliar-natural-musk-rijali-attar-clean-musky-fragrance-alcohol-free-premium-floral/p/itmbdb9d2039a501?pid=ATTHJA54S8Y7FGVA&lid=LSTATTHJA54S8Y7FGVAIMKGHJ&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_2&otracker=search&otracker1=search&fm=Search&iid=5cfd602c-13f7-418f-871b-8e2028bdd33e.ATTHJA54S8Y7FGVA.SEARCH&ppt=sp&ppn=sp&ssid=np4u6eh68w0000001784048872938&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
     "isNewArrival": true,
-    "isBestSeller": true
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Attar/MuskRijali/1.jpg",
+      "/images/products/Attar/MuskRijali/2.jpg",
+      "/images/products/Attar/MuskRijali/3.jpg",
+      "/images/products/Attar/MuskRijali/4.jpg",
+      "/images/products/Attar/MuskRijali/5.jpg"
+    ]
   },
   {
     "id": "attar-2",
-    "name": "Rose Damascena Attar",
-    "slug": "rose-damascena-attar",
+    "name": "Blueberry Mushk Attar Roll-On Perfume Oil 6 ml",
+    "slug": "Blueberry-Mushk-attar-roll-on-perfume-oil-6-ml",
     "mainCategory": "Fragrance World",
     "subCategory": "Attar",
-    "price": 999,
-    "image": "/images/products/rose-damascena.webp",
-    "description": "The pure essence of damask rose, carefully extracted through traditional hydro-distillation for an elegant, deep floral scent. Perfect for everyday wear or special occasions when you want to feel elevated.",
+    "price": 599,
+    "image": "/images/products/Attar/BlueberryMushk/1.jpg",
+    "description": "Discover the refreshing charm of CEZLIAR Blueberry Mushk Attar. Infused with fruity top notes and a smooth musk base, this alcohol-free roll-on offers a long-lasting fragrance, premium quality, and effortless elegance. Perfect for everyday wear, travel, and every special occasion.",
     "benefits": [
-      "Pure organic hydro-distilled Damask Rose extract",
-      "Deeply calming aromatherapy properties that reduce stress",
-      "Alcohol-free and completely free from synthetic compounds",
-      "Subtle sweet honey undertones that unfold over hours"
+      "Extremely long-lasting concentrated oil fragrance (up to 12 hours)",
+      "100% alcohol-free formulation, gentle on all skin types",
+      "Sourced using wild-harvested, aged Indian Oud oil",
+      "Comes in a premium hand-cut crystal bottle with gold detailing"
     ],
     "specifications": {
-      "Volume": "12ml",
+      "Volume": "6 ml",
       "Type": "Concentrated Perfume Oil (Attar)",
-      "Application": "Roll-on",
-      "Origin": "Hasanpur, India",
-      "Scent Family": "Rich Floral"
+      "Application": "Roll-on / Glass Applicator",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
     },
     "applications": [
-      "Roll onto pulse points and rub gently to warm up the molecules.",
-      "Add a few drops to an oil diffuser for an exquisite room scenting.",
-      "Rub a small dab onto your palms and run through your beard or hair for a lasting aura."
+      "Apply directly to pulse points (wrists, neck, and behind ears).",
+      "Gently dab onto clothing (fabrics absorb the oil for multi-day longevity).",
+      "Layer with other lighter floral scents for a custom royal fragrance profile."
     ],
     "faqs": [
       {
-        "question": "What is the shelf life of this attar?",
-        "answer": "Our pure attars have no expiration date. In fact, like fine wine, aged attars mature and smell richer over time when stored in cool, dark environments."
+        "question": "Is this attar safe to use directly on skin?",
+        "answer": "Yes, our attars are 100% alcohol-free and formulated with natural, skin-safe essential oils and carrier oils."
+      },
+      {
+        "question": "How long does the scent last?",
+        "answer": "Due to its high concentration of pure oils, Oud Majestic lasts for 8 to 12 hours on skin and up to 48 hours on fabric."
       }
     ],
-    "amazon": "https://www.amazon.in",
-    "flipkart": "https://www.flipkart.com",
-    "isNewArrival": false,
-    "isBestSeller": false
+    "amazon": "https://www.amazon.in/CEZLIAR-Blueberry-Perfume-Alcohol-Free-Fragrance/dp/B0GFDQDBR4/ref=sr_1_6?crid=28TCZVLF40XYM&dib=eyJ2IjoiMSJ9.gYiPcDTuG3RpZsuhRL1gKYJarn0Ve4kNGUdFWGKD0YcAByyZvEw4JCxmEJOz2Ok586p8SdPgSs9ftBWivLL5ubbVGEvOV-txB39b4uJIzjLgc20MoNvTH2VLeWuJEesutuAP40PPwFc2TJ8AFun_M7ft1utCiwpNBl6LxoDGOB8mcczNf7FmemjRWcmys1H1LVmd_YFuXJz1L2RwBZyGoJGsa0NHLJkJCWQUmyRxwTT7NQZxusKhUHwD7TRet89c7zSWVSGm9JzypuxRjafYTPixLTp_rSvHXHIN6Pw0Saw.m0spI7i4pCBTA1fTkkS4bfCU_6oZ1nHZGuKZwmOEYJI&dib_tag=se&keywords=cezliar+attar&qid=1784050039&sprefix=cezliar+attar%2Caps%2C254&sr=8-6",
+    "flipkart": "https://www.flipkart.com/cezliar-blueberry-mushk-attar-fresh-fruity-musk-aroma-premium-long-lasting-floral/p/itmd2f245324ac42?pid=ATTHJHXY2MDHBUNE&lid=LSTATTHJHXY2MDHBUNEQKM4SM&marketplace=FLIPKART&q=cezliar+attar+&store=g9b%2F0yh%2F22f&srno=s_1_9&otracker=search&otracker1=search&fm=Search&iid=217df6d5-b737-4b08-9fdf-6be89c80ff41.ATTHJHXY2MDHBUNE.SEARCH&ppt=sp&ppn=sp&qH=c70d6f0877d128a5&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Attar/BlueberryMushk/1.jpg",
+      "/images/products/Attar/BlueberryMushk/2.jpg",
+      "/images/products/Attar/BlueberryMushk/3.jpg",
+      "/images/products/Attar/BlueberryMushk/4.jpg",
+      "/images/products/Attar/BlueberryMushk/5.jpg"
+    ]
   },
   {
-    "id": "dhoop-1",
-    "name": "Sandalwood Premium Dhoop",
-    "slug": "sandalwood-premium-dhoop",
+    "id": "attar-3",
+    "name": "Sanaya Attar Roll-On Perfume Oil 6 ml",
+    "slug": "Sanaya-attar-roll-on-perfume-oil-6-ml",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Attar",
+    "price": 599,
+    "image": "/images/products/Attar/Sanaya/1.jpg",
+    "description": "Experience the elegant charm of CEZLIAR Sanaya Attar. Crafted with premium perfume oils and 100% alcohol-free, this long-lasting roll-on blends floral sweetness with refined luxury. Perfect for everyday wear, special occasions, and gifting someone truly special.",
+    "benefits": [
+      "Extremely long-lasting concentrated oil fragrance (up to 12 hours)",
+      "100% alcohol-free formulation, gentle on all skin types",
+      "Sourced using wild-harvested, aged Indian Oud oil",
+      "Comes in a premium hand-cut crystal bottle with gold detailing"
+    ],
+    "specifications": {
+      "Volume": "6 ml",
+      "Type": "Concentrated Perfume Oil (Attar)",
+      "Application": "Roll-on / Glass Applicator",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Apply directly to pulse points (wrists, neck, and behind ears).",
+      "Gently dab onto clothing (fabrics absorb the oil for multi-day longevity).",
+      "Layer with other lighter floral scents for a custom royal fragrance profile."
+    ],
+    "faqs": [
+      {
+        "question": "Is this attar safe to use directly on skin?",
+        "answer": "Yes, our attars are 100% alcohol-free and formulated with natural, skin-safe essential oils and carrier oils."
+      },
+      {
+        "question": "How long does the scent last?",
+        "answer": "Due to its high concentration of pure oils, Oud Majestic lasts for 8 to 12 hours on skin and up to 48 hours on fabric."
+      }
+    ],
+    "amazon": "https://www.amazon.in/CEZLIAR-Blueberry-Shanaya-Alcohol-Ingredients/dp/B0GTDP41HR/ref=sr_1_13?crid=PKA94DTMTB72&dib=eyJ2IjoiMSJ9.gYiPcDTuG3RpZsuhRL1gKYJarn0Ve4kNGUdFWGKD0YcAByyZvEw4JCxmEJOz2Ok586p8SdPgSs9ftBWivLL5ubbVGEvOV-txB39b4uJIzjLgc20MoNvTH2VLeWuJEesutuAP40PPwFc2TJ8AFun_M7ft1utCiwpNBl6LxoDGOB8mcczNf7FmemjRWcmys1H1LVmd_YFuXJz1L2RwBZyGoJGsa0NHLJkJCWQUmyRxwTT7NQZxusKhUHwD7TRet89c7zSWVSGm9JzypuxRjafYTPixLTp_rSvHXHIN6Pw0Saw.m0spI7i4pCBTA1fTkkS4bfCU_6oZ1nHZGuKZwmOEYJI&dib_tag=se&keywords=cezliar+attar&qid=1784049922&sprefix=cezliar+attar%2Caps%2C249&sr=8-13",
+    "flipkart": "https://www.flipkart.com/cezliar-sanaya-luxury-alcohol-free-long-lasting-perfume-oil-premium-attar-blend-herbal/p/itm4c018812b1fdd?pid=ATTHHA3ZEXFT4TAQ&lid=LSTATTHHA3ZEXFT4TAQ900SH8&marketplace=FLIPKART&q=cezliar+attar+sanaya&store=g9b%2F0yh%2F22f&srno=s_1_2&otracker=AS_Query_HistoryAutoSuggest_1_3_na_na_na&otracker1=AS_Query_HistoryAutoSuggest_1_3_na_na_na&fm=search-autosuggest&iid=ae414cd1-225c-405f-ae1c-9e3f88a18d6b.ATTHHA3ZEXFT4TAQ.SEARCH&ppt=sp&ppn=sp&ssid=jaor9sqy0w0000001784049817843&qH=f6ea58f4874602cc&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Attar/Sanaya/1.jpg",
+      "/images/products/Attar/Sanaya/2.jpg",
+      "/images/products/Attar/Sanaya/3.jpg",
+      "/images/products/Attar/Sanaya/4.jpg",
+      "/images/products/Attar/Sanaya/5.jpg"
+    ]
+  },
+  {
+    "id": "SandalwoodDhoop-1",
+    "name": "Mysore Sandal Dhoop Sticks",
+    "slug": "sandalwood-premium-dhoop-sticks",
     "mainCategory": "Fragrance World",
     "subCategory": "Dhoop",
     "price": 349,
-    "image": "/images/products/sandalwood-dhoop.webp",
-    "description": "Purify your space with the calming and spiritual scent of pure Mysore sandalwood. These premium dhoop sticks create a serene environment ideal for meditation, yoga, and stress relief.",
+    "image": "/images/products/Dhoop/Sandalwood/1.jpg",
+    "description": "Refresh your mind, body, and space with Cezliar Aromatic Incense Sticks. Made from natural resins, essential oils, and herbal blends, these incense sticks offer a calming fragrance experience that supports mental clarity, emotional balance, and daily well-being. Perfect for those who value purity and peaceful living.",
     "benefits": [
       "Crafted with 100% natural sandalwood paste and essential oils",
       "Charcoal-free formulation results in non-toxic, cleaner smoke",
@@ -95,7 +162,7 @@
       "Includes a handmade ceramic holder in every pack"
     ],
     "specifications": {
-      "Quantity": "40 Sticks",
+      "Quantity": "25 Sticks",
       "Burn Time": "Approx. 45 mins",
       "Ingredients": "Natural Sandalwood powder, resins, natural gums, essential oils",
       "Holder Included": "Yes (Ceramic)",
@@ -112,20 +179,27 @@
         "answer": "Yes, our dhoop sticks are charcoal-free and organic, meaning they produce zero harmful black carbon smoke and are safe for indoor ventilation."
       }
     ],
-    "amazon": "https://www.amazon.in/Cezliar-Incense-Natural-Fragrance-Meditation/dp/B0H41NVKYV",
-    "flipkart": "https://www.flipkart.com/cezliar-dhoop-sticks-loban-long-lasting-soothing-fragrances-meditation-yoga-floral/p/itm46375f46c158c",
+    "amazon": "https://www.amazon.in/Incense-Sandalwood-Fragrance-Meditation-Relaxation/dp/B0H3696S6D/ref=sr_1_7?crid=2XUBVO8Q8T2T3&dib=eyJ2IjoiMSJ9.VE2I_Gp6xv-3ZCNmHdonVU44C9rZ6XM42rKIYdpEHjrbEHwszu7EgR9VS8vneIONWxlFdFW-DZrJ50luRSWKFAF5SAatiMff4bu9ZcoCMiDoP0iWHqFntxC8jEdqTNIPt43cUOoYOwQHV2xTg1ksprKzjWSqcNRD1tRW7y7xayaqqkzJf0Oyv2Gi8RsIQgmKZLs4O1wSHiD0hAWUq3HUIrQeJyRE1NHgwl2swCzHwmfdC5r7YmKeQvIvvoc5COsrwDo2nBV9iW2jiGB1CxebQ8jtihFUPr5wH2JEt6unD2c.eL4iLtYVIN1DHChvBTy7SlmpxHj-PfN58rFlRdTDKqQ&dib_tag=se&keywords=CEZLIAR+DHOOP&qid=1784052492&sprefix=cezliar+dhoop%2Caps%2C269&sr=8-7&xpid=DSsQi_K2rbi3_",
+    "flipkart": "https://www.flipkart.com/cezliar-mysore-sandal-dhoop-holder-110g-stick-soothing-fragrances-pooja/p/itm69dfd05f38eb5?pid=DCEHBZYD9MFNFDGQ&lid=LSTDCEHBZYD9MFNFDGQLD61N6&marketplace=FLIPKART&q=cezliar+DHOOP&store=bro%2Fvev&srno=s_1_21&otracker=search&otracker1=search&fm=Search&iid=87b02fca-3441-4f74-b650-a7308aa3ec28.DCEHBZYD9MFNFDGQ.SEARCH&ppt=sp&ppn=sp&ssid=3wumgnz2rk0000001784052953945&qH=7a664afaf94474da&ov_redirect=true&ov_redirect=true",
     "isNewArrival": true,
-    "isBestSeller": false
+    "isBestSeller": false,
+    "images": [
+      "/images/products/Dhoop/Sandalwood/1.jpg",
+      "/images/products/Dhoop/Sandalwood/2.jpg",
+      "/images/products/Dhoop/Sandalwood/3.jpg",
+      "/images/products/Dhoop/Sandalwood/4.jpg",
+      "/images/products/Dhoop/Sandalwood/5.jpg"
+    ]
   },
   {
-    "id": "dhoop-2",
-    "name": "Jasmine Meditation Dhoop",
-    "slug": "jasmine-meditation-dhoop",
+    "id": "LobanDhoop-2",
+    "name": "Loban Dhoop Stick",
+    "slug": "loban-dhoop-stick",
     "mainCategory": "Fragrance World",
     "subCategory": "Dhoop",
     "price": 299,
-    "image": "/images/products/jasmine-dhoop.webp",
-    "description": "An uplifting and floral dhoop stick set made with natural jasmine flowers and botanical extracts. Brings the fresh, sweet, and comforting scent of jasmine blossoms inside your home.",
+    "image": "/images/products/Dhoop/Loban/1.jpg",
+    "description": "Infuse your surroundings with the pure and relaxing aroma of Cezliar Premium Incense Sticks. Blended with herbal extracts and natural oils, each stick burns smoothly without charcoal, producing minimal smoke and maximum freshness. Ideal for spiritual rituals, meditation, or simply unwinding after a long day.",
     "benefits": [
       "Made with dried jasmine flower powder and natural gums",
       "Zero added synthetic colors or artificial fragrance enhancers",
@@ -149,10 +223,237 @@
         "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
       }
     ],
-    "amazon": "https://www.amazon.in/Cezliar-Incense-Natural-Fragrance-Meditation/dp/B0H41NVKYV",
-    "flipkart": "https://www.flipkart.com",
+    "amazon": "https://www.amazon.in/Incense-Natural-Burning-Meditation-Spiritual/dp/B0H36J3PRG/ref=sr_1_15?crid=LWMGOMND46LI&dib=eyJ2IjoiMSJ9.VE2I_Gp6xv-3ZCNmHdonVU44C9rZ6XM42rKIYdpEHjosepDM2OFt_xhGH3-cg7E6xsARl58sO1FT0TPiL02fHPghWzdiXG_aAO5Vhtp0025Md6pXiQJVTeDqhIDwP1GY8LUiIN9ESIvsMLpKqezRxQsoOpZCMpvQUl7e_6p42Hf9uNRGXAZDr555O9DCci9mZLs4O1wSHiD0hAWUq3HUIg0Pllquuqs5Ist-i4fmCgRrxOoYbXiyTo1DzpGt7D2usl9MhbuLN0QIXmQ8JDPTk50MwphMYeYWJQfN6VW8Gz0.7MxXyrgfF-kL0Jk-3sdAqAkJt30tJ7Ex5mCoIt7b8PY&dib_tag=se&keywords=CEZLIAR+DHOOP&nsdOptOutParam=true&qid=1784054378&sprefix=cezliar+dhoop%2Caps%2C332&sr=8-15",
+    "flipkart": "https://www.flipkart.com/cezliar-dhoop-sticks-loban-long-lasting-soothing-fragrances-meditation-yoga-floral/p/itm46375f46c158c?pid=DCEHCBFFDBVVYXQY&lid=LSTDCEHCBFFDBVVYXQYUWDFZT&marketplace=FLIPKART&q=cezliar+DHOOP&store=bro%2Fvev&srno=s_1_26&otracker=search&otracker1=search&fm=Search&iid=a6f9570f-8a44-4a68-b852-7fc5376dc7da.DCEHCBFFDBVVYXQY.SEARCH&ppt=sp&ppn=sp&ssid=x6m1enkna80000001784053548575&qH=7a664afaf94474da&ov_redirect=true&ov_redirect=true",
     "isNewArrival": false,
-    "isBestSeller": true
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/Loban/1.jpg",
+      "/images/products/Dhoop/Loban/2.jpg",
+      "/images/products/Dhoop/Loban/3.jpg",
+      "/images/products/Dhoop/Loban/4.jpg",
+      "/images/products/Dhoop/Loban/5.jpg"
+    ]
+  },
+  {
+    "id": "MograDhoop-3",
+    "name": "Magic Mogra Dhoop Stick",
+    "slug": "magic-mogra-dhoop-stick",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/Dhoop/Mogra/1.jpg",
+    "description": "Discover the serene fragrance of Cezliar Natural Incense Sticks, crafted with precision and purity to enhance your daily rituals. Free from charcoal and synthetic additives, each stick offers a clean, rich aroma that lingers gently—perfect for spiritual practices, home ambiance, or moments of mindfulness.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "https://www.amazon.in/CEZLIAR-Fragrance-Bambooless-Dhup-Positivity/dp/B0G1H4HV6Y/ref=sr_1_6?crid=173FKWMUGV37&dib=eyJ2IjoiMSJ9.VE2I_Gp6xv-3ZCNmHdonVU44C9rZ6XM42rKIYdpEHjosepDM2OFt_xhGH3-cg7E6xsARl58sO1FT0TPiL02fHPghWzdiXG_aAO5Vhtp0025Md6pXiQJVTeDqhIDwP1GY8LUiIN9ESIvsMLpKqezRxQsoOpZCMpvQUl7e_6p42Hf9uNRGXAZDr555O9DCci9mZLs4O1wSHiD0hAWUq3HUIg0Pllquuqs5Ist-i4fmCgRrxOoYbXiyTo1DzpGt7D2usl9MhbuLN0QIXmQ8JDPTk50MwphMYeYWJQfN6VW8Gz0.7MxXyrgfF-kL0Jk-3sdAqAkJt30tJ7Ex5mCoIt7b8PY&dib_tag=se&keywords=CEZLIAR+DHOOP&nsdOptOutParam=true&qid=1784054407&sprefix=cezliar+dhoop%2Caps%2C267&sr=8-6",
+    "flipkart": "https://www.flipkart.com/cezliar-mogra-dhoop-sticks-pooja-25-natural-sticks-bambooless-charcoal-free-110g-floral/p/itm72774a22c2328?pid=DCEHCB9AGEHYZANK&lid=LSTDCEHCB9AGEHYZANKYS170P&marketplace=FLIPKART&q=cezliar+DHOOP&store=bro%2Fvev&srno=s_1_33&otracker=search&otracker1=search&fm=Search&iid=a6f9570f-8a44-4a68-b852-7fc5376dc7da.DCEHCB9AGEHYZANK.SEARCH&ppt=sp&ppn=sp&qH=7a664afaf94474da&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/Mogra/1.jpg",
+      "/images/products/Dhoop/Mogra/2.jpg",
+      "/images/products/Dhoop/Mogra/3.jpg",
+      "/images/products/Dhoop/Mogra/4.jpg",
+      "/images/products/Dhoop/Mogra/5.jpg"
+    ]
+  },
+  {
+    "id": "KapurDhoop-4",
+    "name": "Kapur Dhoop Stick",
+    "slug": "kapur-dhoop-stick",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/Dhoop/Kapur/1.jpg",
+    "description": "Discover the serene fragrance of Cezliar Natural Incense Sticks, crafted with precision and purity to enhance your daily rituals. Free from charcoal and synthetic additives, each stick offers a clean, rich aroma that lingers gently—perfect for spiritual practices, home ambiance, or moments of mindfulness.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "https://www.amazon.in/Incense-Burning-Prayer-Meditation-Stress/dp/B0H36F47PG/ref=sr_1_32?crid=2XUBVO8Q8T2T3&dib=eyJ2IjoiMSJ9.VE2I_Gp6xv-3ZCNmHdonVU44C9rZ6XM42rKIYdpEHjosepDM2OFt_xhGH3-cg7E6xsARl58sO1FT0TPiL02fHPghWzdiXG_aAO5Vhtp0027oP0iWHqFntxC8jEdqTNIPt43cUOoYOwQHV2xTg1kspgsoOpZCMpvQUl7e_6p42Hf9uNRGXAZDr555O9DCci9mpXCdaYAPR43J7NVq_ic4QmgAyEQHTQGh5Qh7RFqkykMsKOy_BuSFCrEVrcuY5IGIwDo2nBV9iW2jiGB1CxebQ8Hr54auQDM1LajckjjVoLE.oVLb75FApwX65Tu4DbyQ5X1I6T-iP1q2wjzz0FboSAo&dib_tag=se&keywords=CEZLIAR+DHOOP&nsdOptOutParam=true&qid=1784052061&sprefix=cezliar+dhoop%2Caps%2C269&sr=8-32",
+    "flipkart": "https://www.flipkart.com/cezliar-kapur-dhoop-pooja-25-pcs-batti-guggal-puja-home-floral/p/itm3aa6b59c07a16?pid=DCEHC68YSHCJTD4Y&lid=LSTDCEHC68YSHCJTD4YRYBBVM&marketplace=FLIPKART&q=cezliar+DHOOP&store=bro%2Fvev&srno=s_1_17&otracker=search&otracker1=search&fm=Search&iid=67d2fe38-3e05-44f3-a98b-c4befad04984.DCEHC68YSHCJTD4Y.SEARCH&ppt=sp&ppn=sp&ssid=f1or4fjvkg0000001784054448957&qH=7a664afaf94474da&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/Kapur/1.jpg",
+      "/images/products/Dhoop/Kapur/2.jpg",
+      "/images/products/Dhoop/Kapur/3.jpg",
+      "/images/products/Dhoop/Kapur/4.jpg",
+      "/images/products/Dhoop/Kapur/5.jpg"
+    ]
+  },
+  {
+    "id": "Cedar Wood",
+    "name": "Cedar Wood Dhoop Stick",
+    "slug": "cedar-wood-dhoop-stick",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/Dhoop/CedarWood/1.jpg",
+    "description": "Discover the serene fragrance of Cezliar Natural Incense Sticks, crafted with precision and purity to enhance your daily rituals. Free from charcoal and synthetic additives, each stick offers a clean, rich aroma that lingers gently—perfect for spiritual practices, home ambiance, or moments of mindfulness.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "http://amazon.in/Incense-Natural-Fragrance-Meditation-Relaxation/dp/B0H366M7BX/ref=sr_1_8?crid=25B1WAPVIBR58&dib=eyJ2IjoiMSJ9.WQxINuzAwJdX4Cde1eVl0d9NI1J1EX6goRn5ai46yj92mQTiH1o40KrTIGLpL525DxW8xnSc5brGTGaSOgRZ-DQejL-YKSjIRFcA7PiGaNIHvGUyxHlGhynfITG4vD0dyfafImYzhEhJMTP_rLT3bkrIvKEpJKLvDmo7pZjJg0AefI0k0GvKxgq8be_W9NhAnRRDwo_FFy2CVzU2Pt6MQYiuTY6AuDBizL_TmD967DPRw86AXLDYtqTnNU9MKHuByEUWI5udvw_GxoC6Cj_WssNBa7kvFKBtJv7E8E8YUqU.81Efe8UNXheL9U0fL6BPD1VJVqtcRfccBslzpVrc8a4&dib_tag=se&keywords=CEZLIAR+DHOOP+Cedar+Wood&nsdOptOutParam=true&qid=1784054493&sprefix=cezliar+dhoop+cedar+wood%2Caps%2C228&sr=8-8",
+    "flipkart": "https://www.flipkart.com/cezliar-cedar-wood-dhoopsticks-nice-smell-110gm/p/itmf501f2054e935?pid=INSHCSVMYHGHGPTE&lid=LSTINSHCSVMYHGHGPTENMYD01&marketplace=FLIPKART&q=cezliar+DHOOP+cezar+wood&store=search.flipkart.com&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=6abbd611-cf42-4bbc-84bb-200bc223cbf3.INSHCSVMYHGHGPTE.SEARCH&ppt=sp&ppn=sp&qH=ca420c8b72dabe60&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/CedarWood/1.jpg",
+      "/images/products/Dhoop/CedarWood/2.jpg",
+      "/images/products/Dhoop/CedarWood/3.jpg",
+      "/images/products/Dhoop/CedarWood/4.jpg",
+      "/images/products/Dhoop/CedarWood/5.jpg"
+    ]
+  },
+  {
+    "id": "Gulab",
+    "name": "Gulab Dhoop Stick",
+    "slug": "gulab-dhoop-stick",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/Dhoop/Gulab/1.jpg",
+    "description": "Discover the serene fragrance of Cezliar Natural Incense Sticks, crafted with precision and purity to enhance your daily rituals. Free from charcoal and synthetic additives, each stick offers a clean, rich aroma that lingers gently—perfect for spiritual practices, home ambiance, or moments of mindfulness.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "https://www.amazon.in/Incense-Floral-Fragrance-Burning-Meditation/dp/B0H3ZVC7CL/ref=sr_1_9?crid=1D4B9PFKCCOY0&dib=eyJ2IjoiMSJ9.r6ikBMC0Sr55XgWTfkySsjK9tsnAqW13ZfjPS84qeISMzlmi88DW-c4RrC66l2oj4vlo0QmiwhmyTBCYQRtfUyb4AyWE72MYZ7HIJ65PKw8k6dcVY8L6oHiU7EHuI_HAx1aEFyAa-yQOYCmBV2kT0-t0sGDTPhosLCo5fdzgSw0-iBMVGqG-7eJdseSW1xh_GnrnF4rmZsVPSIRnA30NxNhQODOmIS5DGXBXGaC2i100kUgDCQFLbhKLk-5Xt3ROxqlo3yvCnHc3-ySKn-eM4BNJa0GQwxbdRlIoA4Gx0uE.at1i-DKRchIvhTP-QHbvHPHuL5Sg1cQU15WdRM2tkPI&dib_tag=se&keywords=CEZLIAR+DHOOP+gulab&nsdOptOutParam=true&qid=1784055475&sprefix=cezliar+dhoop+gulab%2Caps%2C222&sr=8-9",
+    "flipkart": "https://www.flipkart.com/cezliar-pure-gulab-fragrances-dhoop-stick-burns-35-40-min-no-bamboo-charcoal-rose/p/itmeb7cdbac868b0?pid=DCEHBZMCGGHJ9WCX&lid=LSTDCEHBZMCGGHJ9WCXOCIPYI&marketplace=FLIPKART&q=cezliar+DHOOP+fulab&store=bro%2Fvev&srno=s_1_10&otracker=search&otracker1=search&fm=Search&iid=6061ca21-9458-404b-a9a7-41305588b03b.DCEHBZMCGGHJ9WCX.SEARCH&ppt=sp&ppn=sp&ssid=sra30gzcg00000001784055447537&qH=e19f6f5222be8749&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/Gulab/1.jpg",
+      "/images/products/Dhoop/Gulab/2.jpg",
+      "/images/products/Dhoop/Gulab/3.jpg",
+      "/images/products/Dhoop/Gulab/4.jpg",
+      "/images/products/Dhoop/Gulab/5.jpg"
+    ]
+  },
+  {
+    "id": "Gugal",
+    "name": "Gugal Dhoop Stick",
+    "slug": "gugal-dhoop-stick",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Dhoop",
+    "price": 299,
+    "image": "/images/products/Dhoop/Gugal/1.jpg",
+    "description": "Discover the serene fragrance of Cezliar Natural Incense Sticks, crafted with precision and purity to enhance your daily rituals. Free from charcoal and synthetic additives, each stick offers a clean, rich aroma that lingers gently—perfect for spiritual practices, home ambiance, or moments of mindfulness.",
+    "benefits": [
+      "Made with dried jasmine flower powder and natural gums",
+      "Zero added synthetic colors or artificial fragrance enhancers",
+      "Helps elevate mood, reduce anxiety, and clear negative energies",
+      "Environmentally friendly packaging"
+    ],
+    "specifications": {
+      "Quantity": "40 Sticks",
+      "Burn Time": "Approx. 40 mins",
+      "Ingredients": "Jasmine flower powder, natural resins, honey, wood powder",
+      "Holder Included": "Yes (Ceramic)",
+      "Origin": "Varanasi, India"
+    },
+    "applications": [
+      "Light the dhoop stick tip and blow out the flame.",
+      "Place in a ventilated area to fill the room with sweet, natural jasmine fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "Does it leave a lot of ash?",
+        "answer": "It burns down completely, leaving fine, easy-to-clean natural wood ash on the holder plate."
+      }
+    ],
+    "amazon": "https://www.amazon.in/dp/B0H366RNP2",
+    "flipkart": "https://www.flipkart.com/cezliar-gugal-dhoop-sticks-premium-jar-1x110gm-no-bamboo-charcoal-guggul/p/itmc35a18fa82c9c?pid=DCEHC4C7KFWARKMY&lid=LSTDCEHC4C7KFWARKMYSERDI3&marketplace=FLIPKART&q=cezliar+DHOOP+gugal&store=bro%2Fvev&srno=s_1_7&otracker=search&otracker1=search&fm=Search&iid=880e772f-72f6-4cd6-b714-eefa83d1afc0.DCEHC4C7KFWARKMY.SEARCH&ppt=sp&ppn=sp&qH=8f80108c92dc45d0&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Dhoop/Gugal/1.jpg",
+      "/images/products/Dhoop/Gugal/2.jpg",
+      "/images/products/Dhoop/Gugal/3.jpg",
+      "/images/products/Dhoop/Gugal/4.jpg",
+      "/images/products/Dhoop/Gugal/5.jpg"
+    ]
   },
   {
     "id": "drain-1",
@@ -161,7 +462,7 @@
     "mainCategory": "Home Care",
     "subCategory": "Drain Opener",
     "price": 199,
-    "image": "/images/products/drain-opener.webp",
+    "image": "/images/products/Drain/1.jpg",
     "description": "An industrial-grade, ultra-powerful drain cleaning solution designed to dissolve hair, grease, soap scum, and organic blockages in minutes. Safe for all piping systems and septic tanks.",
     "benefits": [
       "Fast-acting formula clears heavy blockages in under 15 minutes",
@@ -191,10 +492,17 @@
         "answer": "No. Our formulation is specifically engineered to be safe on all PVC, copper, and iron plumbing."
       }
     ],
-    "amazon": "https://www.amazon.in",
-    "flipkart": "https://www.flipkart.com",
+    "amazon": "amazon.in/Cleaner-Instant-Remover-Kitchen-Bathroom/dp/B0G7HV6V76/ref=sr_1_1?crid=37GV0HX8CQT50&dib=eyJ2IjoiMSJ9.p8-6yYnqrj8Gzah2UtEV93hTabGtbdIv3ucPOYhiJD4ZbLWPT45li-CUzujvS3Mec9ZcjWUQpq9nlO1cfzktYAV4OkNIDgevfp5YSDBLhwGfayR55pbNNFBo1k8_YUu2Tu-dz9YKM3Z1iJIyoRx97NGsduYzrsY0Mt06OTjOFOxITag79SfrRdNs1hW0U0n3OK8h_kgQ29IH9rLAT20Au9Eu4SXvCvo0Uw5mWa45mVeHv6yW-94ksl7ZLHaLmy785Sv9aDiBGuMg5XZ3guPWEUFjhQl8YKdrvV5cJbuOA18.mjZ__jD0ylNmX9JHzzDl9ZEvnz-i3JKHfJbKTeVG5lc&dib_tag=se&keywords=cezliar+drain+opener&qid=1784046622&sprefix=%2Caps%2C226&sr=8-1",
+    "flipkart": "https://www.flipkart.com/cezliar-powerful-drain-cleaner-instant-clog-control-deep-cleaning-powder-opener/p/itmaf815d75d9e77?pid=DROHGHD4HQV8JGHH&lid=LSTDROHGHD4HQV8JGHHLABPHI&marketplace=FLIPKART&q=cezliar+drain&store=search.flipkart.com&srno=s_1_11&otracker=search&otracker1=search&fm=Search&iid=en_mf3CdxDVlaR8O7n-o27UxZnDMwQzmmmDfEDzit5Z76rUqa3uRqqscxNhPbqGJTKDj4GmcuIX1cB8WoTT74fNkjMlCSI0WQwPuHSnBHBu-PlzBv4CtkmXw3AMdP1MNZ4E&ppt=sp&ppn=sp&qH=d3681b48716264b8&ov_redirect=true&ov_redirect=true",
     "isNewArrival": false,
-    "isBestSeller": true
+    "isBestSeller": true,
+    "images": [
+      "/images/products/Drain/1.jpg",
+      "/images/products/Drain/2.jpg",
+      "/images/products/Drain/3.jpg",
+      "/images/products/Drain/4.jpg",
+      "/images/products/Drain/5.jpg"
+    ]
   },
   {
     "id": "filter-1",
@@ -233,9 +541,470 @@
         "answer": "No, this is an advanced UF + Carbon system which produces zero wastewater, making it eco-friendly and efficient."
       }
     ],
-    "amazon": "https://www.amazon.in",
-    "flipkart": "https://www.flipkart.com",
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar",
     "isNewArrival": true,
-    "isBestSeller": true
+    "isBestSeller": true,
+    "images": [
+      "/images/products/water-filter.webp",
+      "/images/products/water-filter.webp",
+      "/images/products/water-filter.webp",
+      "/images/products/water-filter.webp",
+      "/images/products/water-filter.webp"
+    ]
+  },
+  {
+    "id": "White oudh",
+    "name": "White oudh Solid Perfume Balm 19.18g",
+    "slug": "White-oudh-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/White-oudh/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR White Oudh Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-white-oud-solid-attar-soft-woody-amber-musk-long-lasting-alcohol-free-floral/p/itm450ba6f7be04f?pid=ATTHJGSTZBREREZD&lid=LSTATTHJGSTZBREREZDG7XJJH&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_2&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGSTZBREREZD.SEARCH&ppt=sp&ppn=sp&ssid=nt8i0s030g0000001784052825618&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/White-oudh/1.jpg",
+      "/images/products/SolidPerfumes/White-oudh/2.jpg",
+      "/images/products/SolidPerfumes/White-oudh/3.jpg",
+      "/images/products/SolidPerfumes/White-oudh/4.jpg",
+      "/images/products/SolidPerfumes/White-oudh/5.jpg"
+    ]
+  },
+  {
+    "id": "Iceberg",
+    "name": "iceberg Solid Perfume Balm 19.18g",
+    "slug": "iceberg-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/Iceberg/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR iceberg Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-solid-attar-iceberg-fresh-aquatic-long-lasting-alcohol-free-luxury-floral/p/itm3ce41be944756?pid=ATTHJGSPAGS7Z59Y&lid=LSTATTHJGSPAGS7Z59YBN82GX&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_3&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGSPAGS7Z59Y.SEARCH&ppt=sp&ppn=sp&ssid=nt8i0s030g0000001784052825618&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/Iceberg/1.jpg",
+      "/images/products/SolidPerfumes/Iceberg/2.jpg",
+      "/images/products/SolidPerfumes/Iceberg/3.jpg",
+      "/images/products/SolidPerfumes/Iceberg/4.jpg",
+      "/images/products/SolidPerfumes/Iceberg/5.jpg"
+    ]
+  },
+  {
+    "id": "Cr7",
+    "name": "Cr7 Solid Perfume Balm 19.18g",
+    "slug": "Cr7-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/Cr7/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR White Oudh Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-cr7-inspired-solid-attar-bold-sporty-fresh-amber-long-lasting-alcohol-free-floral/p/itme109c27386a61?pid=ATTHJGSTVED4YKSW&lid=LSTATTHJGSTVED4YKSWIAYOUA&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_8&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGSTVED4YKSW.SEARCH&ppt=sp&ppn=sp&ssid=nt8i0s030g0000001784052825618&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/Cr7/1.jpg",
+      "/images/products/SolidPerfumes/Cr7/2.jpg",
+      "/images/products/SolidPerfumes/Cr7/3.jpg",
+      "/images/products/SolidPerfumes/Cr7/4.jpg",
+      "/images/products/SolidPerfumes/Cr7/5.jpg"
+    ]
+  },
+  {
+    "id": "Shanaya",
+    "name": "Shanaya Solid Perfume Balm 19.18g",
+    "slug": "Shanaya-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/Shanaya/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR Shanaya Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-shanaya-solid-attar-floral-amber-musk-long-lasting-alcohol-free/p/itm9fc441bac649c?pid=ATTHJGSQD2GVBTYH&lid=LSTATTHJGSQD2GVBTYH5RS6ET&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_15&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGSQD2GVBTYH.SEARCH&ppt=sp&ppn=sp&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/Shanaya/1.jpg",
+      "/images/products/SolidPerfumes/Shanaya/2.jpg",
+      "/images/products/SolidPerfumes/Shanaya/3.jpg",
+      "/images/products/SolidPerfumes/Shanaya/4.jpg",
+      "/images/products/SolidPerfumes/Shanaya/5.jpg"
+    ]
+  },
+  {
+    "id": "Sandal",
+    "name": "Sandal Solid Perfume Balm 19.18g",
+    "slug": "Sandal-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/Sandal/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR Sandal Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-sandal-solid-attar-warm-creamy-woody-amber-musk-long-lasting-alcohol-free-floral/p/itmeed0d087843b9?pid=ATTHJGSSG29T33RN&lid=LSTATTHJGSSG29T33RN1RGN9F&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_17&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGSSG29T33RN.SEARCH&ppt=sp&ppn=sp&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/Sandal/1.jpg",
+      "/images/products/SolidPerfumes/Sandal/2.jpg",
+      "/images/products/SolidPerfumes/Sandal/3.jpg",
+      "/images/products/SolidPerfumes/Sandal/4.jpg",
+      "/images/products/SolidPerfumes/Sandal/5.jpg"
+    ]
+  },
+  {
+    "id": "Sabaya",
+    "name": "Sabaya Solid Perfume Balm 19.18g",
+    "slug": "Sabaya-solid-perfume-balm-19.18g",
+    "mainCategory": "Fragrance World",
+    "subCategory": "Solid Perfumes",
+    "price": 799,
+    "image": "/images/products/SolidPerfumes/Sabaya/1.jpg",
+    "description": "Indulge in the rich, majestic aura of CEZLIAR Sabaya Solid Perfume. Crafted with a premium wax base and natural essential oils, this alcohol-free perfume balm delivers a warm, balsamic oud scent that lingers beautifully on the skin. Elegant, travel-friendly, and perfect for quick touch-ups.",
+    "benefits": [
+      "Convenient travel-friendly pocket tin",
+      "Alcohol-free, beeswax-based luxury balm",
+      "Rich and warm oriental woody aroma",
+      "Gentle on skin and long-lasting formulation"
+    ],
+    "specifications": {
+      "Weight": "19.18g",
+      "Type": "Solid Perfume Balm",
+      "Base": "Natural Beeswax & Shea Butter",
+      "Origin": "Surat Gujarat, India",
+      "Scent Family": "Woody Oriental"
+    },
+    "applications": [
+      "Swirl your finger over the perfume balm to warm it up.",
+      "Apply directly to pulse points like wrists, neck, and behind the ears.",
+      "Reapply throughout the day as desired for a fresh burst of fragrance."
+    ],
+    "faqs": [
+      {
+        "question": "How long does a solid perfume last on skin?",
+        "answer": "Since solid perfumes are oil and wax-based, they evaporate slowly and typically last between 4 to 6 hours on skin."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar-sabaya-solid-attar-sweet-floral-fruity-amber-musk-long-lasting-alcohol-free/p/itm59591695c40d1?pid=ATTHJGQFDNFDV8N2&lid=LSTATTHJGQFDNFDV8N2YN136Z&marketplace=FLIPKART&q=cezliar+attar&store=g9b%2F0yh%2F22f&srno=s_1_37&otracker=search&otracker1=search&fm=Search&iid=d81ac843-8011-47a1-b9dd-84259631f23b.ATTHJGQFDNFDV8N2.SEARCH&ppt=sp&ppn=sp&qH=aa39e20e411f877c&ov_redirect=true&ov_redirect=true",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/SolidPerfumes/Sabaya/1.jpg",
+      "/images/products/SolidPerfumes/Sabaya/2.jpg",
+      "/images/products/SolidPerfumes/Sabaya/3.jpg",
+      "/images/products/SolidPerfumes/Sabaya/4.jpg",
+      "/images/products/SolidPerfumes/Sabaya/5.jpg"
+    ]
+  },
+  {
+    "id": "pp-spun-1",
+    "name": "CEZLIAR Premium PP Spun Filter 5 Micron",
+    "slug": "cezliar-premium-pp-spun-filter-5-micron",
+    "mainCategory": "Home Care",
+    "subCategory": "PP Spun Filter",
+    "price": 299,
+    "image": "/images/products/WaterCare/PPSpun/1.jpg",
+    "description": "Protect your family and your water filtration system with the CEZLIAR Premium PP Spun Filter. Made with 100% pure food-grade polypropylene, this 5-micron sediment filter efficiently removes dirt, sand, rust, and suspended particles, ensuring clean water and extending the life of your RO membranes.",
+    "benefits": [
+      "High-dirt holding capacity for cleaner water",
+      "Made with food-grade 100% pure polypropylene",
+      "Efficient 5-micron filtration rating",
+      "Compatible with all standard 10-inch filter housings"
+    ],
+    "specifications": {
+      "Size": "10 inches",
+      "Micron Rating": "5 Micron",
+      "Material": "Polypropylene (Food Grade)",
+      "Max Temperature": "45°C",
+      "Life Span": "3 to 6 months (depending on water quality)"
+    },
+    "applications": [
+      "Turn off the water supply to the filter housing.",
+      "Unscrew the housing cover using a spanner.",
+      "Remove the old filter and insert the new CEZLIAR PP Spun filter.",
+      "Screw the housing back tightly and turn on the water supply."
+    ],
+    "faqs": [
+      {
+        "question": "How often should I replace the PP spun filter?",
+        "answer": "We recommend replacing the filter every 3 to 6 months, or sooner if you notice a drop in water pressure or significant discoloration."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/WaterCare/PPSpun/1.jpg",
+      "/images/products/WaterCare/PPSpun/2.jpg",
+      "/images/products/WaterCare/PPSpun/3.jpg",
+      "/images/products/WaterCare/PPSpun/4.jpg",
+      "/images/products/WaterCare/PPSpun/5.jpg"
+    ]
+  },
+  {
+    "id": "filter-candle-1",
+    "name": "CEZLIAR Activated Carbon Block Filter Candle",
+    "slug": "cezliar-activated-carbon-block-filter-candle",
+    "mainCategory": "Home Care",
+    "subCategory": "Filter Candle",
+    "price": 499,
+    "image": "/images/products/WaterCare/FilterCandle/1.jpg",
+    "description": "Experience crisp, clean water with the CEZLIAR Activated Carbon Block Filter Candle. Sourced from high-density coconut shell activated carbon, this candle removes chlorine, organic compounds, bad odor, and taste, delivering healthy and sweet tasting drinking water.",
+    "benefits": [
+      "Premium coconut shell carbon for superior absorption",
+      "Effectively removes chlorine, bad taste, and odors",
+      "Protects RO membrane from chemical damage",
+      "Long operational life with high flow rate"
+    ],
+    "specifications": {
+      "Material": "Coconut Shell Activated Carbon",
+      "Size": "10 inches",
+      "Type": "CTO Carbon Block",
+      "Life Span": "6 to 12 months",
+      "Max Pressure": "120 PSI"
+    },
+    "applications": [
+      "Turn off the RO system and close the water supply.",
+      "Remove the carbon filter stage cartridge from its holder.",
+      "Install the new CEZLIAR carbon block candle securely.",
+      "Flush the new filter for 5 minutes before connecting it to the RO membrane."
+    ],
+    "faqs": [
+      {
+        "question": "Does this filter remove TDS?",
+        "answer": "No, carbon block filters are designed to remove chlorine, chemicals, odor, and organic impurities, not dissolved salts (TDS). TDS reduction is handled by the RO membrane."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/WaterCare/FilterCandle/1.jpg",
+      "/images/products/WaterCare/FilterCandle/2.jpg",
+      "/images/products/WaterCare/FilterCandle/3.jpg",
+      "/images/products/WaterCare/FilterCandle/4.jpg",
+      "/images/products/WaterCare/FilterCandle/5.jpg"
+    ]
+  },
+  {
+    "id": "filter-set-1",
+    "name": "CEZLIAR Complete RO Pre-Filter Outer Housing Set",
+    "slug": "cezliar-complete-ro-pre-filter-outer-housing-set",
+    "mainCategory": "Home Care",
+    "subCategory": "Filter Set",
+    "price": 899,
+    "image": "/images/products/WaterCare/FilterSet/1.jpg",
+    "description": "A comprehensive pre-filtration solution for your home RO system. The CEZLIAR Complete Pre-Filter Set includes a heavy-duty outer filter housing, a premium 5-micron PP spun filter, teflon tape, and all necessary connectors to ensure a leak-proof pre-filtration setup.",
+    "benefits": [
+      "Heavy-duty leak-proof pre-filter housing",
+      "Comes with premium connectors and Teflon tape",
+      "Protects inline filters from heavy mud and rust",
+      "Universal compatibility with all household RO systems"
+    ],
+    "specifications": {
+      "Housing Material": "Food Grade Polycarbonate",
+      "Port Size": "1/4 inch standard",
+      "Compatibility": "Works with Kent, Aquaguard, Livpure, etc.",
+      "Set Includes": "Housing, PP Spun Filter, Spanner, Elbows, Teflon Tape",
+      "Color": "Transparent / White"
+    },
+    "applications": [
+      "Mount the pre-filter housing bracket on the wall near the water source.",
+      "Insert the PP spun filter inside the housing.",
+      "Connect the inlet pipe to the inlet port and outlet pipe to the RO system inlet.",
+      "Tighten securely with the provided spanner and check for leaks."
+    ],
+    "faqs": [
+      {
+        "question": "Does this set include the filter inside?",
+        "answer": "Yes, this set comes complete with one 10-inch PP Spun filter candle inside, plus all elbows and teflon tape."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "images": [
+      "/images/products/WaterCare/FilterSet/1.jpg",
+      "/images/products/WaterCare/FilterSet/2.jpg",
+      "/images/products/WaterCare/FilterSet/3.jpg",
+      "/images/products/WaterCare/FilterSet/4.jpg",
+      "/images/products/WaterCare/FilterSet/5.jpg"
+    ]
+  },
+  {
+    "id": "accessories-1",
+    "name": "CEZLIAR RO Water Pipe Tube & Connector Kit",
+    "slug": "cezliar-ro-water-pipe-tube-connector-kit",
+    "mainCategory": "Home Care",
+    "subCategory": "Accessories",
+    "price": 349,
+    "image": "/images/products/WaterCare/Accessories/1.jpg",
+    "description": "A premium quality accessory kit for installing and maintaining your water purifier. Features a 10-meter food-grade 1/4 inch PE water pipe tube, along with a collection of quick push-fit elbow and straight connectors to ensure a clean, reliable, and leak-free installation.",
+    "benefits": [
+      "10-meter food-grade high pressure flexible PE tube",
+      "Includes leak-proof quick-fit connectors",
+      "Durable material resistant to cracks and aging",
+      "Easy DIY push-fit installation"
+    ],
+    "specifications": {
+      "Tube Length": "10 Meters",
+      "Tube Diameter": "1/4 inch (6.35mm)",
+      "Material": "Linear Low Density Polyethylene (LLDPE)",
+      "Connector Types": "Elbow, Straight, I-Union, T-Union",
+      "Pressure Rating": "Up to 150 PSI"
+    },
+    "applications": [
+      "Cut the PE tube to the desired length with a sharp cutter.",
+      "Push the tube firmly into the quick-fit connector until it locks in place.",
+      "Use the lock clips to secure the connector joint.",
+      "To disconnect, press the collar of the connector and pull the tube out."
+    ],
+    "faqs": [
+      {
+        "question": "Is this pipe compatible with all RO purifiers?",
+        "answer": "Yes, the 1/4 inch tube is the standard size used for water inlet, outlet, and reject lines in almost all domestic RO and UV purifiers."
+      }
+    ],
+    "amazon": "https://www.amazon.in/cezliar",
+    "flipkart": "https://www.flipkart.com/cezliar",
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "images": [
+      "/images/products/WaterCare/Accessories/1.jpg",
+      "/images/products/WaterCare/Accessories/2.jpg",
+      "/images/products/WaterCare/Accessories/3.jpg",
+      "/images/products/WaterCare/Accessories/4.jpg",
+      "/images/products/WaterCare/Accessories/5.jpg"
+    ]
   }
 ]

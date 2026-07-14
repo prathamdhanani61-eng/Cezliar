@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Quick View Link overlay */}
-        <Link 
+        <Link
           to={`/product/${product.id}`}
           className="absolute inset-0 z-0 bg-primary/0 group-hover:bg-primary/[0.02] transition-colors duration-500"
         />
@@ -66,7 +66,7 @@ const ProductCard = ({ product }) => {
           <h3 className="text-base font-heading font-bold text-text mb-2 line-clamp-1 hover:text-primary transition-colors">{product.name}</h3>
         </Link>
         <p className="text-xs text-gray-500 line-clamp-2 mb-5 flex-grow font-body leading-relaxed">{product.description}</p>
-        
+
         <div className="mt-auto pt-4 border-t border-gray-100">
           {/* Price */}
           <div className="flex justify-between items-center mb-4">
@@ -78,9 +78,9 @@ const ProductCard = ({ product }) => {
           {(amazonUrl || flipkartUrl) && (
             <div className={`grid ${amazonUrl && flipkartUrl ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mt-2`}>
               {amazonUrl && (
-                <a 
-                  href={amazonUrl} 
-                  target="_blank" 
+                <a
+                  href={amazonUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1 bg-[#232F3E] hover:bg-black text-white py-2.5 px-2 rounded-none text-[9px] font-bold uppercase tracking-wider transition-all duration-300"
                 >
@@ -88,9 +88,9 @@ const ProductCard = ({ product }) => {
                 </a>
               )}
               {flipkartUrl && (
-                <a 
-                  href={flipkartUrl} 
-                  target="_blank" 
+                <a
+                  href={flipkartUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1 border border-[#2874F0] hover:bg-[#2874F0] hover:text-white text-[#2874F0] py-2.5 px-2 rounded-none text-[9px] font-bold uppercase tracking-wider transition-all duration-300"
                 >

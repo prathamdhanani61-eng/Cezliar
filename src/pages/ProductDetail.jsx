@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Truck, Sparkles, ArrowUpRight, ArrowLeft } from 'lucide-react';
+import { Shield, Truck, Sparkles, ArrowUpRight, ArrowLeft, ChevronDown } from 'lucide-react';
 import { getProductById, getProductsBySubCategory } from '../data/products';
 import Button from '../components/Button';
 import ProductCard from '../components/ProductCard';
@@ -12,6 +12,12 @@ const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id);
   const [activeTab, setActiveTab] = useState('description');
+  const [showMarketplaces, setShowMarketplaces] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [id]);
 
   const amazonUrl = product ? formatMarketplaceUrl(product.amazon) : '';
   const flipkartUrl = product ? formatMarketplaceUrl(product.flipkart) : '';
@@ -36,6 +42,8 @@ const ProductDetail = () => {
   const relatedProducts = getProductsBySubCategory(product.subCategory)
     .filter(p => p.id !== product.id)
     .slice(0, 4);
+
+  const productImages = product.images && product.images.length > 0 ? product.images : [product.image];
 
   const tabs = [
     { id: 'description', label: 'Description' },
@@ -66,27 +74,55 @@ const ProductDetail = () => {
 
         {/* Product Details Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24 items-start">
-          
-          {/* Left: Product Image */}
-          <div className="lg:col-span-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="bg-white rounded-3xl p-8 shadow-luxury border border-gold/5 flex items-center justify-center aspect-square max-h-[550px] relative overflow-hidden"
-            >
+
+          {/* Left: Product Image Gallery */}
+          <div className="lg:col-span-6 flex flex-col gap-6">
+            <div className="bg-white rounded-3xl p-8 shadow-luxury border border-gold/5 flex items-center justify-center aspect-square max-h-[550px] relative overflow-hidden">
               {product.isNewArrival && (
                 <span className="absolute top-6 left-6 z-10 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/10 shadow-md">New</span>
               )}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-contain filter drop-shadow-2xl transition-transform duration-500 hover:scale-105"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23F4EFE6'/%3E%3Ctext x='50%25' y='50%25' font-family='Playfair Display' font-size='32' fill='%230F4D3C' text-anchor='middle' font-weight='bold'%3ECEZLIAR%3C/text%3E%3C/svg%3E";
-                }}
-              />
-            </motion.div>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeImageIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  src={productImages[activeImageIndex]}
+                  alt={product.name}
+                  className="w-full h-full object-contain filter drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23F4EFE6'/%3E%3Ctext x='50%25' y='50%25' font-family='Playfair Display' font-size='32' fill='%230F4D3C' text-anchor='middle' font-weight='bold'%3ECEZLIAR%3C/text%3E%3C/svg%3E";
+                  }}
+                />
+              </AnimatePresence>
+            </div>
+
+            {productImages.length > 1 && (
+              <div className="flex gap-4 justify-center overflow-x-auto py-2">
+                {productImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`w-20 h-20 bg-white rounded-2xl p-2 border transition-all duration-300 flex items-center justify-center overflow-hidden shrink-0 relative group ${activeImageIndex === idx
+                      ? 'border-gold shadow-luxury scale-105 ring-2 ring-gold/20'
+                      : 'border-gray-100 hover:border-gold/50'
+                      }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${product.name} View ${idx + 1}`}
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F4EFE6'/%3E%3C/svg%3E";
+                      }}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right: Product Info */}
@@ -136,28 +172,72 @@ const ProductDetail = () => {
                   <p className="text-xs text-gray-500 font-body mb-6 leading-relaxed">
                     To ensure premium quality and secure shipping, CEZLIAR products are sold exclusively through our official brand store listings on Amazon and Flipkart.
                   </p>
-                  <div className={`grid grid-cols-1 ${amazonUrl && flipkartUrl ? 'sm:grid-cols-2' : ''} gap-4`}>
-                    {amazonUrl && (
-                      <a
-                        href={amazonUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 bg-[#232F3E] hover:bg-black text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+
+                  {/* Buy On Button */}
+                  <button
+                    onClick={() => setShowMarketplaces(!showMarketplaces)}
+                    className="w-full flex items-center justify-center gap-2.5 bg-primary hover:bg-[#0A3328] text-white py-3 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-md border border-primary relative group"
+                  >
+                    <span>Buy On</span>
+                    <motion.span
+                      animate={{ rotate: showMarketplaces ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="inline-flex items-center"
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </motion.span>
+                  </button>
+
+                  {/* Dropdown Container */}
+                  <AnimatePresence>
+                    {showMarketplaces && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
                       >
-                        Buy on Amazon <ArrowUpRight className="w-4 h-4" />
-                      </a>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 pt-2">
+                          {amazonUrl ? (
+                            <a
+                              href={amazonUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2 bg-[#232F3E] hover:bg-black text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md"
+                            >
+                              Amazon <ArrowUpRight className="w-4 h-4" />
+                            </a>
+                          ) : (
+                            <button
+                              disabled
+                              className="flex items-center justify-center gap-2 bg-gray-100 text-gray-400 border border-gray-200/50 py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest cursor-not-allowed opacity-60"
+                            >
+                              Amazon (Unavailable)
+                            </button>
+                          )}
+
+                          {flipkartUrl ? (
+                            <a
+                              href={flipkartUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2 bg-[#2874F0] hover:bg-[#1a5bbf] text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md"
+                            >
+                              Flipkart <ArrowUpRight className="w-4 h-4" />
+                            </a>
+                          ) : (
+                            <button
+                              disabled
+                              className="flex items-center justify-center gap-2 bg-gray-100 text-gray-400 border border-gray-200/50 py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest cursor-not-allowed opacity-60"
+                            >
+                              Flipkart (Unavailable)
+                            </button>
+                          )}
+                        </div>
+                      </motion.div>
                     )}
-                    {flipkartUrl && (
-                      <a
-                        href={flipkartUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 bg-[#2874F0] hover:bg-[#1a5bbf] text-white py-4 px-6 rounded-2xl font-body text-xs font-bold uppercase tracking-widest transition-all shadow-md"
-                      >
-                        Buy on Flipkart <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
+                  </AnimatePresence>
                 </div>
               )}
 
