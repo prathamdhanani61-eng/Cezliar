@@ -1,20 +1,22 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'motion/react';
 import Icon from '../components/Icon';
+import InstagramOrderLink from '../components/InstagramOrderLink';
 import { GIFT_BUDGETS, GIFT_MOODS, GIFT_WHO } from '../data/giftFinder';
 import { SITE, whatsappLink } from '../data/site';
 import { SITE_URL } from '../utils/site';
 import { formatPrice } from '../utils/format';
 
-const DEFAULTS = { who: 'her', mood: 'floral', budget: 'any' };
+const DEFAULTS = { who: 'her', mood: 'floral', budget: 'any', amount: '' };
+const PICK_COUNT = ['No picks', 'One pick', 'Two picks', 'Three picks'];
 
 const TIPS = [
   { title: 'Gift-ready boxes', text: 'Every attar arrives in a box with gold detailing — no extra wrapping needed.' },
   { title: 'Pair a ritual', text: 'An attar with a matching dhoop makes a thoughtful set for Diwali, weddings and housewarmings.' },
-  { title: 'We send it for you', text: `Order on WhatsApp (${SITE.whatsappDisplay}) and tell us where to deliver — we will help with the rest.` },
+  { title: 'We send it for you', text: `Order on WhatsApp (${SITE.whatsappDisplay}) or Instagram (@${SITE.instagramHandle}) and tell us where to deliver — we will help with the rest.` },
 ];
 
 function OptionGroup({ number, legend, options, value, onChange, tall = true }) {
@@ -47,10 +49,21 @@ function OptionGroup({ number, legend, options, value, onChange, tall = true }) 
 
 export default function GiftFinder({ products }) {
   const [answers, setAnswers] = useState(DEFAULTS);
+  const amountRef = useRef(null);
   const set = (key) => (id) => setAnswers((a) => ({ ...a, [key]: id }));
+  const chooseBudget = (id) => {
+    set('budget')(id);
+    if (id === 'custom') requestAnimationFrame(() => amountRef.current?.focus());
+  };
+
+  const custom = answers.budget === 'custom';
+  const amount = Number(answers.amount) || 0;
+  const maxPrice = custom ? amount || Infinity : GIFT_BUDGETS.find((b) => b.id === answers.budget).max;
+  const lowestPrice = Math.min(...products.map((p) => p.price));
+  const budgetOptions = GIFT_BUDGETS.map((b) => (b.id === 'custom' && amount ? { ...b, hint: `Up to ${formatPrice(amount)}` } : b));
+  const budgetLabel = custom ? (amount ? `Up to ${formatPrice(amount)}` : 'Not sure yet') : GIFT_BUDGETS.find((b) => b.id === answers.budget).label;
 
   const picks = useMemo(() => {
-    const max = GIFT_BUDGETS.find((b) => b.id === answers.budget).max;
     const score = (p) => {
       const moodRank = p.moods.indexOf(answers.mood);
       let s = moodRank === 0 ? 0 : moodRank > 0 ? 1 : 3;
@@ -58,24 +71,23 @@ export default function GiftFinder({ products }) {
       if (answers.who !== 'home' && p.collection === 'dhoop') s += 0.5;
       return s;
     };
-    return products.filter((p) => p.price <= max).sort((a, b) => score(a) - score(b)).slice(0, 3);
-  }, [products, answers]);
+    return products.filter((p) => p.price <= maxPrice).sort((a, b) => score(a) - score(b)).slice(0, 3);
+  }, [products, answers.who, answers.mood, maxPrice]);
 
   const whoText = GIFT_WHO.find((w) => w.id === answers.who).text;
   const details = [
     `For: ${GIFT_WHO.find((w) => w.id === answers.who).label}`,
     `Mood: ${GIFT_MOODS.find((m) => m.id === answers.mood).label}`,
-    `Budget: ${GIFT_BUDGETS.find((b) => b.id === answers.budget).label}`,
+    `Budget: ${budgetLabel}`,
   ];
   const line = (p) => `• ${p.name} — ${formatPrice(p.price)}\n  ${SITE_URL}/product/${p.slug}`;
-  const orderAll = whatsappLink([
+  const allMessage = [
     'Hello CEZLIAR! I would like to order a gift.',
     ...details,
     '',
-    'My picks:',
-    ...picks.map(line),
-  ].join('\n'));
-  const orderOne = (p) => whatsappLink(['Hello CEZLIAR! I would like to order this as a gift:', line(p), '', ...details].join('\n'));
+    ...(picks.length ? ['My picks:', ...picks.map(line)] : ['Please suggest something that fits.']),
+  ].join('\n');
+  const oneMessage = (p) => ['Hello CEZLIAR! I would like to order this as a gift:', line(p), '', ...details].join('\n');
 
   return (
     <div className="container-site pt-5">
@@ -83,7 +95,7 @@ export default function GiftFinder({ products }) {
         <div className="flex flex-[1_1_420px] flex-col justify-center gap-4 p-[clamp(32px,5vw,64px)]">
           <p className="eyebrow">Gift finder</p>
           <h1 className="font-display text-[clamp(44px,5vw,76px)] font-light leading-none tracking-[-0.02em]">Find a gift that <em className="italic">lingers.</em></h1>
-          <p className="max-w-[460px] text-[17px] leading-relaxed text-body">Three quick questions. We will suggest the right attar, balm or dhoop — then order it as a gift on WhatsApp ({SITE.whatsappDisplay}) and we will take care of the rest.</p>
+          <p className="max-w-[460px] text-[17px] leading-relaxed text-body">Three quick questions. We will suggest the right attar, balm or dhoop — then order it as a gift on WhatsApp or Instagram and we will take care of the rest.</p>
         </div>
         <div className="relative min-h-[340px] flex-[1.2_1_420px]">
           <img src="/images/site/gift-banner.webp" srcSet="/images/site/gift-banner-600.webp 600w, /images/site/gift-banner.webp 1600w" sizes="(min-width: 1024px) 55vw, 100vw" alt="A green gift box with a copper ribbon beside an attar bottle" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[75%_center]" />
@@ -94,12 +106,44 @@ export default function GiftFinder({ products }) {
         <div className="flex min-w-0 flex-[1.3_1_520px] flex-col gap-8">
           <OptionGroup number={1} legend="Who is it for?" options={GIFT_WHO} value={answers.who} onChange={set('who')} />
           <OptionGroup number={2} legend="Which mood do they love?" options={GIFT_MOODS} value={answers.mood} onChange={set('mood')} />
-          <OptionGroup number={3} legend="What is your budget?" options={GIFT_BUDGETS} value={answers.budget} onChange={set('budget')} tall={false} />
+          <div className="flex flex-col gap-3">
+            <OptionGroup number={3} legend="What is your budget?" options={budgetOptions} value={answers.budget} onChange={chooseBudget} tall={false} />
+            <AnimatePresence initial={false}>
+              {custom && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="overflow-hidden"
+                >
+                  <label htmlFor="gift-budget" className="mb-2 mt-1 block text-sm font-medium">Your budget in rupees</label>
+                  <div className="flex max-w-[360px] items-center rounded-full border border-line bg-white pl-5 focus-within:border-forest">
+                    <span aria-hidden="true" className="text-[17px] text-muted">₹</span>
+                    <input
+                      ref={amountRef}
+                      id="gift-budget"
+                      type="text"
+                      inputMode="numeric"
+                      autoComplete="off"
+                      maxLength={6}
+                      placeholder="e.g. 600"
+                      value={answers.amount}
+                      onChange={(e) => setAnswers((a) => ({ ...a, amount: e.target.value.replace(/\D/g, '') }))}
+                      aria-describedby="gift-budget-hint"
+                      className="min-h-[52px] w-full min-w-0 rounded-full bg-transparent pl-2 pr-5 text-[17px] text-ink placeholder:text-muted focus:outline-none"
+                    />
+                  </div>
+                  <p id="gift-budget-hint" className="mt-2 text-[13px] text-muted">We show gifts at or under this price. Our gifts start at {formatPrice(lowestPrice)}.</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         <aside aria-live="polite" aria-label="Your gift picks" className="flex min-w-0 flex-[1_1_380px] flex-col gap-[18px] rounded-panel bg-forest p-[clamp(24px,3vw,36px)] text-ivory-on-forest lg:sticky lg:top-28">
           <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-gold-light">Our picks</p>
-          <h2 className="font-display text-[clamp(28px,2.6vw,38px)] font-light leading-[1.1]">Three picks for {whoText}</h2>
+          <h2 className="font-display text-[clamp(28px,2.6vw,38px)] font-light leading-[1.1]">{PICK_COUNT[picks.length]} for {whoText}</h2>
           {picks.length ? (
             <ul className="flex flex-col gap-2.5">
               <AnimatePresence mode="popLayout" initial={false}>
@@ -120,9 +164,14 @@ export default function GiftFinder({ products }) {
                       <span className="text-[13px] text-muted">{p.tagline}</span>
                       <span className="flex flex-wrap items-baseline gap-x-3.5 gap-y-1 text-sm">
                         <span className="text-[15px] font-medium">{formatPrice(p.price)}</span>
-                        <a href={orderOne(p)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-1 font-medium no-underline">
-                          <Icon name="whatsapp" size={14} /> Order as a gift<span className="sr-only"> on WhatsApp (opens in a new tab)</span>
-                        </a>
+                        <span className="inline-flex items-center gap-1">
+                          <a href={whatsappLink(oneMessage(p))} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-1 font-medium no-underline">
+                            <Icon name="whatsapp" size={14} /> Order as a gift<span className="sr-only"> on WhatsApp (opens in a new tab)</span>
+                          </a>
+                          <InstagramOrderLink message={oneMessage(p)} className="-my-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-forest hover:bg-sand">
+                            <Icon name="instagram" size={16} /><span className="sr-only">Order {p.shortName} as a gift on Instagram (opens in a new tab)</span>
+                          </InstagramOrderLink>
+                        </span>
                       </span>
                     </div>
                   </motion.li>
@@ -130,12 +179,21 @@ export default function GiftFinder({ products }) {
               </AnimatePresence>
             </ul>
           ) : (
-            <p className="rounded-[18px] bg-ivory p-5 text-ink">Nothing fits that budget yet — try “Any budget”, or ask us on WhatsApp for ideas.</p>
+            <p className="rounded-[18px] bg-ivory p-5 text-ink">
+              {custom && amount
+                ? `Our gifts start at ${formatPrice(lowestPrice)}, so nothing fits ${formatPrice(amount)} yet — try a little more, or message us and we will suggest something.`
+                : 'Nothing fits that budget yet — try “Any budget”, or message us for ideas.'}
+            </p>
           )}
-          <a href={orderAll} target="_blank" rel="noopener noreferrer" className="btn-light min-h-[54px]">
-            <Icon name="whatsapp" size={18} /> Order gift on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
-          </a>
-          <p className="text-center text-[13px] text-mist">All gift orders go to {SITE.whatsappDisplay}. We confirm the price and delivery details with you there.</p>
+          <div className="grid gap-2.5 sm:grid-cols-2">
+            <a href={whatsappLink(allMessage)} target="_blank" rel="noopener noreferrer" className="btn-light min-h-[54px] px-4">
+              <Icon name="whatsapp" size={18} /> Order on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <InstagramOrderLink message={allMessage} className="btn-outline-light min-h-[54px] px-4">
+              <Icon name="instagram" size={18} /> Order on Instagram<span className="sr-only"> (opens in a new tab)</span>
+            </InstagramOrderLink>
+          </div>
+          <p className="text-center text-[13px] leading-relaxed text-mist">Gift orders go to WhatsApp {SITE.whatsappDisplay} or Instagram @{SITE.instagramHandle} — on Instagram your picks are copied, just paste them in the chat. We confirm the price and delivery with you there.</p>
           <button type="button" onClick={() => setAnswers(DEFAULTS)} className="min-h-[44px] self-center px-4 text-sm text-ivory-on-forest underline">Start over</button>
         </aside>
       </section>

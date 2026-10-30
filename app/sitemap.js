@@ -13,6 +13,5 @@ export default function sitemap() {
     ...products.map((product) => entry(getProductUrl(product), 0.8)),
     entry('/gift-finder', 0.6, 'monthly'),
     entry('/about', 0.5, 'monthly'),
-    entry('/contact', 0.5, 'monthly'),
   ];
 }

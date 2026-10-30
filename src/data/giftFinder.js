@@ -14,10 +14,12 @@ export const GIFT_MOODS = [
   { id: 'calm', label: 'Calm & spiritual', hint: 'Dhoop for prayer' },
 ];
 
+// The 'custom' budget's max is the amount the visitor types in.
 export const GIFT_BUDGETS = [
   { id: 'low', label: 'Under ₹400', max: 400 },
   { id: 'mid', label: 'Up to ₹800', max: 800 },
   { id: 'any', label: 'Any budget', max: Infinity },
+  { id: 'custom', label: 'Your budget', hint: 'Enter an amount' },
 ];
 
 export const GIFT_PRODUCT_MOODS = {

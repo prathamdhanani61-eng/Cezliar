@@ -7,6 +7,7 @@ import MarketplaceButtons from '../components/MarketplaceButtons';
 import WishlistButton from '../components/WishlistButton';
 import Faq from '../components/Faq';
 import { CATEGORY_GROUPS, CATEGORY_PAGES } from '../data/categories';
+import { mailtoLink, whatsappLink } from '../data/site';
 import { optimizedImage, products, toProductCard } from '../data/products';
 import { formatPrice } from '../utils/format';
 import { summarize } from '../utils/text';
@@ -149,7 +150,7 @@ export default function Category({ categoryId }) {
           <div className="flex flex-[1_1_320px] flex-col gap-3">
             <p className="eyebrow">Good to know</p>
             <h2 id="category-faq" className="font-display text-[clamp(34px,3.6vw,52px)] font-light leading-[1.05] tracking-[-0.02em]">Common <em className="italic">questions</em></h2>
-            <p className="text-base leading-relaxed text-body">Still unsure? <Link href="/contact">Get in touch</Link>.</p>
+            <p className="text-base leading-relaxed text-body">Still unsure? <a href={whatsappLink(`Hello CEZLIAR! I have a question about ${config.title.toLowerCase()}.`)} target="_blank" rel="noopener noreferrer" className="font-medium text-forest underline underline-offset-2">Ask us on WhatsApp</a> or <a href={mailtoLink(`Question about ${config.title.toLowerCase()}`)} className="font-medium text-forest underline underline-offset-2">email us</a>.</p>
           </div>
           <div className="min-w-0 flex-[2_1_520px]">
             <Faq items={faqs} />

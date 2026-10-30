@@ -67,6 +67,7 @@ export default function RootLayout({ children }) {
         '@type': 'ContactPoint',
         contactType: 'sales',
         telephone: `+${SITE.whatsappNumber}`,
+        email: SITE.email,
         areaServed: 'IN',
         availableLanguage: ['en', 'hi'],
       },

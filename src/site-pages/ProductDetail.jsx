@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumbs from '../components/Breadcrumbs';
 import JsonLd, { breadcrumbJsonLd } from '../components/JsonLd';
 import Icon from '../components/Icon';
+import InstagramOrderLink from '../components/InstagramOrderLink';
 import ProductCard from '../components/ProductCard';
 import MarketplaceButtons from '../components/MarketplaceButtons';
 import WishlistButton from '../components/WishlistButton';
@@ -10,7 +11,7 @@ import ProductGallery from '../components/product/ProductGallery';
 import ProductTabs from '../components/product/ProductTabs';
 import { CATEGORY_PAGES } from '../data/categories';
 import { getProductImages, optimizedImage, toProductCard } from '../data/products';
-import { SITE, whatsappOrderLink } from '../data/site';
+import { orderMessage, whatsappOrderLink } from '../data/site';
 import testimonials from '../data/testimonials.json';
 import { formatPrice } from '../utils/format';
 import { SITE_URL } from '../utils/site';
@@ -31,7 +32,7 @@ export default function ProductDetail({ product, relatedProducts }) {
   const facts = Object.entries(product.specifications || {}).slice(0, 3);
   const review = testimonials.find((t) => t.id === REVIEW_BY_SUBCATEGORY[product.subCategory]);
   const orderRef = { name: product.name, price: product.price, slug: card.slug };
-  const giftOrder = whatsappOrderLink(orderRef, { gift: true });
+  const giftMessage = orderMessage(orderRef, { gift: true });
   const badges = [card.isBestSeller && 'Bestseller', card.isNewArrival && 'New'].filter(Boolean);
   const isFragrance = product.mainCategory === 'Fragrance World';
 
@@ -85,13 +86,19 @@ export default function ProductDetail({ product, relatedProducts }) {
               <a href={card.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary min-h-[50px] px-4">
                 <Icon name="whatsapp" size={18} /> Order on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
               </a>
-              <a href={SITE.instagramDm} target="_blank" rel="noopener noreferrer" className="btn-outline min-h-[50px] px-4">
+              <InstagramOrderLink message={orderMessage(orderRef)} className="btn-outline min-h-[50px] px-4">
                 <Icon name="instagram" size={18} /> Order on Instagram<span className="sr-only"> (opens in a new tab)</span>
-              </a>
+              </InstagramOrderLink>
             </div>
-            <a href={giftOrder} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 text-[15px] font-medium no-underline">
-              <Icon name="gift" size={18} /> Sending this as a gift? Order it on WhatsApp ({SITE.whatsappDisplay})<span className="sr-only"> (opens in a new tab)</span>
-            </a>
+            <p className="flex min-h-[44px] items-center gap-2 text-[15px]">
+              <Icon name="gift" size={18} className="flex-none text-forest" />
+              <span>
+                Sending this as a gift? Order it on{' '}
+                <a href={whatsappOrderLink(orderRef, { gift: true })} target="_blank" rel="noopener noreferrer" className="font-medium text-forest underline underline-offset-2">WhatsApp<span className="sr-only"> (opens in a new tab)</span></a>
+                {' '}or{' '}
+                <InstagramOrderLink message={giftMessage} className="font-medium text-forest underline underline-offset-2">Instagram<span className="sr-only"> (opens in a new tab)</span></InstagramOrderLink>.
+              </span>
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
