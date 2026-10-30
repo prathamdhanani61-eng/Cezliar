@@ -1,43 +1,47 @@
 import HeroBento from '../components/home/HeroBento';
 import FeaturedProducts from '../components/home/FeaturedProducts';
 import {
-  AboutSection, Bestsellers, CategoryCards, CollectionsSection, Marquee, Testimonials, WhyCezliar,
+  AboutSection, Bestsellers, CategoryCards, CollectionsSection, Marquee, OrderChannels, Testimonials, WhyCezliar,
 } from '../components/home/HomeSections';
-import { cardsByIds, getProductById, products, toProductCard } from '../data/products';
-import { COLLECTIONS } from '../data/categories';
+import { cardsByIds, getProductById, products, publicFileExists, toProductCard } from '../data/products';
+import { CATEGORY_PAGES, COLLECTIONS } from '../data/categories';
 import {
-  BESTSELLER_IDS, BESTSELLER_SPOTLIGHT_ID, FEATURED_IDS, HERO_SLIDES, HOME_TESTIMONIALS, WHY_CEZLIAR,
+  BESTSELLER_IDS, BESTSELLER_SPOTLIGHT_ID, FEATURED_IDS, HERO_ROTATE_MS, HERO_SLIDES, HOME_TESTIMONIALS, WHY_CEZLIAR,
 } from '../data/home';
 import testimonials from '../data/testimonials.json';
 import { formatPrice } from '../utils/format';
 import { summarize } from '../utils/text';
 
 const countWhere = (match) => products.filter(match).length;
-const fromPrice = (match) => {
-  const prices = products.filter(match).map((p) => p.price);
-  return prices.length ? `From ${formatPrice(Math.min(...prices))}` : 'Shop now';
-};
+
+const RAIL_NOUN = { attars: 'attars', 'solid-perfumes': 'solid perfumes', dhoop: 'dhoop scents', 'home-care': 'home & water essentials' };
 
 function buildSlides() {
   return HERO_SLIDES.map((slide) => {
-    const featured = toProductCard(getProductById(slide.featuredId));
+    const category = CATEGORY_PAGES[slide.categoryId];
+    const items = products.filter(category.match).map(toProductCard);
+    const topCategory = CATEGORY_PAGES[slide.top.categoryId || slide.categoryId];
+    const topItems = products.filter(topCategory.match);
     const side = toProductCard(getProductById(slide.side.id));
-    const topProduct = slide.top.productId && getProductById(slide.top.productId);
-    const collection = COLLECTIONS.find((c) => c.id === slide.top.collection);
+    const small = slide.image.replace(/\.webp$/, '-900.webp');
     return {
       ...slide,
-      featured: {
-        name: featured.shortName,
-        meta: `${formatPrice(featured.price)} · ${featured.notes || featured.tagline}`,
-        image: featured.image,
-        slug: featured.slug,
+      srcSet: publicFileExists(small) ? `${small} 900w, ${slide.image} 1800w` : undefined,
+      href: category.path,
+      rail: {
+        label: `All ${items.length} ${RAIL_NOUN[slide.categoryId]}`,
+        products: items.map((p) => ({ id: p.id, slug: p.slug, shortName: p.shortName, image: p.thumb, priceLabel: formatPrice(p.price) })),
       },
       top: {
         ...slide.top,
-        priceLabel: topProduct ? formatPrice(topProduct.price) : fromPrice(collection.match),
+        href: topCategory.path,
+        label: topCategory.title,
+        meta: `${topItems.length} ${topItems.length === 1 ? 'product' : 'products'}`,
+        priceLabel: `From ${formatPrice(Math.min(...topItems.map((p) => p.price)))}`,
       },
       side: {
-        ...slide.side,
+        image: slide.side.image || side.image,
+        alt: slide.side.alt || side.name,
         name: side.shortName,
         priceLabel: formatPrice(side.price),
         href: `/product/${side.slug}`,
@@ -50,24 +54,24 @@ function buildCollectionTiles() {
   const [attar, solid, dhoop, home] = COLLECTIONS;
   return [
     { title: 'Attars', href: attar.href, count: countWhere(attar.match), unit: 'blends', text: 'Rare scents, timeless traditions. Alcohol-free roll-ons.', image: '/images/site/mood-musk-rijali.webp', bg: 'bg-forest', imageClass: 'inset-0 h-full w-full object-cover' },
-    { title: 'Solid Perfumes', href: solid.href, count: countWhere(solid.match), unit: 'balms', text: 'Personal fragrance, made portable. Pocket-sized balms.', image: '/images/products/SolidPerfumes/White-oudh/1.jpg', bg: 'border border-line-soft bg-white', imageClass: 'left-0 right-0 top-0 h-[72%] w-full object-contain p-6' },
-    { title: 'Dhoop', href: dhoop.href, count: countWhere(dhoop.match), unit: 'scents', text: 'Charcoal-free sticks for prayer and quiet evenings.', image: '/images/site/dhoop-cutout.webp', bg: 'bg-forest', imageClass: 'left-0 right-0 top-[2%] h-[70%] w-full object-contain' },
-    { title: 'Home & Water', href: home.href, count: countWhere(home.match), unit: 'essentials', text: 'Drain care and water filtration for modern homes.', image: '/images/site/hero-homecare.webp', bg: 'bg-sand', imageClass: 'inset-0 h-full w-full object-cover object-[64%_center]' },
+    { title: 'Solid Perfumes', href: solid.href, count: countWhere(solid.match), unit: 'balms', text: 'Personal fragrance, made portable. Pocket-sized balms.', image: '/images/site/solid-cutout-480.webp', bg: 'bg-sand', imageClass: 'left-[6%] right-[6%] top-[14%] h-[40%] w-[88%] object-contain' },
+    { title: 'Dhoop', href: dhoop.href, count: countWhere(dhoop.match), unit: 'scents', text: 'Charcoal-free sticks for prayer and quiet evenings.', image: '/images/site/dhoop-cutout-480.webp', bg: 'bg-forest', imageClass: 'left-[6%] right-[6%] top-[6%] h-[56%] w-[88%] object-contain' },
+    { title: 'Home & Water', href: home.href, count: countWhere(home.match), unit: 'essentials', text: 'Drain care and water filtration for modern homes.', image: '/images/site/hero-homecare-900.webp', bg: 'bg-sand', imageClass: 'inset-0 h-full w-full object-cover object-[64%_center]' },
   ];
 }
 
 function buildCategoryCards() {
-  const imageOf = (id) => toProductCard(getProductById(id)).image;
+  const imageOf = (id) => toProductCard(getProductById(id)).thumb;
   const sub = (name) => (p) => p.subCategory === name;
   return [
-    { title: 'Attars', href: '/collections/fragrance-collection/attars', count: countWhere(sub('Attar')), image: imageOf('attar-1'), icon: 'drop' },
-    { title: 'Solid perfumes', href: '/collections/fragrance-collection/solid-perfumes', count: countWhere(sub('Solid Perfumes')), image: imageOf('Sabaya'), icon: 'drop' },
-    { title: 'Dhoop sticks', href: '/collections/fragrance-collection/dhoop', count: countWhere(sub('Dhoop')), image: imageOf('LobanDhoop-2'), icon: 'stick' },
-    { title: 'Drain care', href: '/collections/home-care-collection/drain-cleaner', count: countWhere(sub('Drain Opener')), image: imageOf('drain-1'), icon: 'pipe' },
-    { title: 'Water filters', href: '/collections/water-care-collection', count: countWhere(sub('Water Filter')), image: imageOf('filter-1'), icon: 'filter' },
-    { title: 'PP spun filters', href: '/collections/water-care-collection/pp-spun-filter', count: countWhere(sub('PP Spun Filter')), image: imageOf('pp-spun-1'), icon: 'filter' },
-    { title: 'Filter candles', href: '/collections/water-care-collection/filter-candle', count: countWhere(sub('Filter Candle')), image: imageOf('filter-candle-1'), icon: 'candle' },
-    { title: 'Filter sets & kits', href: '/collections/water-care-collection/filter-set', count: countWhere((p) => p.subCategory === 'Filter Set' || p.subCategory === 'Accessories'), image: imageOf('filter-set-1'), icon: 'pipe' },
+    { title: 'Attars', href: CATEGORY_PAGES.attars.path, count: countWhere(sub('Attar')), image: imageOf('attar-1'), icon: 'drop' },
+    { title: 'Solid perfumes', href: CATEGORY_PAGES['solid-perfumes'].path, count: countWhere(sub('Solid Perfumes')), image: imageOf('Sabaya'), icon: 'drop' },
+    { title: 'Dhoop sticks', href: CATEGORY_PAGES.dhoop.path, count: countWhere(sub('Dhoop')), image: imageOf('LobanDhoop-2'), icon: 'stick' },
+    { title: 'Drain care', href: CATEGORY_PAGES['drain-care'].path, count: countWhere(sub('Drain Opener')), image: imageOf('drain-1'), icon: 'pipe' },
+    { title: 'Water filters', href: CATEGORY_PAGES['water-care'].path, count: countWhere(sub('Water Filter')), image: imageOf('filter-1'), icon: 'filter' },
+    { title: 'PP spun filters', href: CATEGORY_PAGES['pp-spun'].path, count: countWhere(sub('PP Spun Filter')), image: imageOf('pp-spun-1'), icon: 'filter' },
+    { title: 'Filter candles', href: CATEGORY_PAGES['filter-candle'].path, count: countWhere(sub('Filter Candle')), image: imageOf('filter-candle-1'), icon: 'candle' },
+    { title: 'Filter sets & kits', href: CATEGORY_PAGES['filter-set'].path, count: countWhere((p) => p.subCategory === 'Filter Set' || p.subCategory === 'Accessories'), image: imageOf('filter-set-1'), icon: 'pipe' },
   ];
 }
 
@@ -81,24 +85,26 @@ export default function Home() {
   const spotlight = {
     ...toProductCard(spotlightSource),
     description: summarize(spotlightSource.description, 190),
-    moodImage: '/images/site/mood-candles.webp',
+    moodImage: '/images/site/mood-candles-600.webp',
   };
 
   const reviews = HOME_TESTIMONIALS.map(({ id, productId }) => {
     const review = testimonials.find((t) => t.id === id);
-    return review && { ...review, image: toProductCard(getProductById(productId)).image };
+    return review && { ...review, image: toProductCard(getProductById(productId)).thumb };
   }).filter(Boolean);
 
   const marqueeNames = products.filter((p) => p.mainCategory === 'Fragrance World').map((p) => p.shortName || p.name);
 
   return (
     <>
-      <HeroBento slides={buildSlides()} />
+      <h1 className="sr-only">CEZLIAR — alcohol-free attars, solid perfumes, dhoop and home care, made in India</h1>
+      <HeroBento slides={buildSlides()} rotateMs={HERO_ROTATE_MS} />
       <Marquee names={marqueeNames} />
       <FeaturedProducts tabs={featuredTabs} />
       <CollectionsSection tiles={buildCollectionTiles()} />
       <CategoryCards categories={buildCategoryCards()} />
       <Bestsellers spotlight={spotlight} products={cardsByIds(BESTSELLER_IDS)} />
+      <OrderChannels />
       <AboutSection productCount={products.length} />
       <WhyCezliar items={WHY_CEZLIAR} />
       <Testimonials reviews={reviews} />

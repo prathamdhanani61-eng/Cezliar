@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ProductCard from '../src/components/ProductCard';
 import { cardsByIds } from '../src/data/products';
+import { whatsappLink } from '../src/data/site';
 
 export const metadata = {
   title: 'Page not found',
@@ -20,11 +21,11 @@ export default function NotFound() {
           <div className="flex flex-wrap gap-3">
             <Link href="/" className="btn-primary">Back to home</Link>
             <Link href="/shop" className="btn-outline">Shop all</Link>
-            <Link href="/contact" className="btn px-4 text-forest">Contact us</Link>
+            <a href={whatsappLink('Hello CEZLIAR! I could not find a page on your website.')} target="_blank" rel="noopener noreferrer" className="btn px-4 text-forest">Ask us on WhatsApp</a>
           </div>
         </div>
         <div className="relative min-h-[420px] flex-[1_1_380px] bg-forest">
-          <img src="/images/site/dhoop-cutout.webp" alt="" className="absolute inset-x-[4%] bottom-0 top-[6%] h-[94%] w-[92%] object-contain object-bottom" />
+          <img src="/images/site/dhoop-cutout-480.webp" alt="" className="absolute inset-x-[4%] bottom-0 top-[6%] h-[94%] w-[92%] object-contain object-bottom" />
         </div>
       </section>
 

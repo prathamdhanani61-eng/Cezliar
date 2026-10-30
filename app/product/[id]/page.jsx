@@ -1,5 +1,6 @@
 import { notFound, permanentRedirect } from 'next/navigation';
 import ProductDetail from '../../../src/site-pages/ProductDetail';
+import JsonLd from '../../../src/components/JsonLd';
 import { getProductBySlugOrId, getProductImages, products, toProductCard } from '../../../src/data/products';
 import { getProductSlug, getProductUrl } from '../../../src/utils/product';
 import { SITE_URL } from '../../../src/utils/site';
@@ -13,13 +14,13 @@ export async function generateMetadata({ params }) {
   const product = getProductBySlugOrId(id);
   if (!product) return { title: 'Product not found', robots: { index: false } };
   const description = `${product.description}`.slice(0, 157).trimEnd();
-  const image = getProductImages(product)[0];
+  const image = getProductImages(product)[0] || '/opengraph-image.jpg';
   return {
     title: product.name,
     description,
     alternates: { canonical: getProductUrl(product) },
-    openGraph: { type: 'website', title: product.name, description, url: getProductUrl(product), images: image ? [{ url: image, alt: product.name }] : [] },
-    twitter: { card: 'summary_large_image', title: product.name, description, images: image ? [image] : [] },
+    openGraph: { type: 'website', title: product.name, description, url: getProductUrl(product), images: [{ url: image, alt: product.name }] },
+    twitter: { card: 'summary_large_image', title: product.name, description, images: [image] },
   };
 }
 
@@ -47,17 +48,20 @@ export default async function Page({ params }) {
     sku: product.id,
     category: `${product.mainCategory} / ${product.subCategory}`,
     brand: { '@type': 'Brand', name: 'CEZLIAR' },
+    url: `${SITE_URL}${getProductUrl(product)}`,
     offers: {
       '@type': 'Offer',
       url: `${SITE_URL}${getProductUrl(product)}`,
       priceCurrency: 'INR',
       price: product.price,
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@id': `${SITE_URL}/#organization` },
     },
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredProduct) }} />
+      <JsonLd data={structuredProduct} />
       <ProductDetail product={product} relatedProducts={relatedFor(product)} />
     </>
   );

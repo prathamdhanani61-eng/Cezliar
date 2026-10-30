@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
     title: config.title,
     description: config.description,
     alternates: { canonical: config.path },
-    openGraph: { title: `${config.title} | CEZLIAR`, description: config.description, url: config.path },
+    openGraph: { title: `${config.title} | CEZLIAR`, description: config.description, url: config.path, images: [{ url: '/opengraph-image.jpg', width: 1200, height: 630, alt: 'CEZLIAR' }] },
   };
 }
 

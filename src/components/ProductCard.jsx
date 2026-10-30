@@ -38,7 +38,7 @@ export default function ProductCard({ product, badge = 'auto' }) {
   return (
     <article className="group flex flex-col gap-3">
       <div className="relative">
-        <Link href={url} className="block aspect-square overflow-hidden rounded-card border border-line-soft bg-white" tabIndex={-1} aria-hidden="true">
+        <Link href={url} className="block aspect-square overflow-hidden rounded-card border border-line-soft bg-white transition-[box-shadow,transform] duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_22px_44px_-30px_rgba(15,46,37,0.55)]" tabIndex={-1} aria-hidden="true">
           <ProductImage product={product} />
         </Link>
         {badgeText && (

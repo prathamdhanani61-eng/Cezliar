@@ -3,7 +3,7 @@ import { products, toProductCard } from '../../src/data/products';
 
 export const metadata = {
   title: 'Shop All',
-  description: 'Shop CEZLIAR alcohol-free attars, solid perfumes, charcoal-free dhoop, drain care and water filters — available on Amazon and Flipkart.',
+  description: 'Shop all 22 CEZLIAR products: alcohol-free attars, solid perfumes, dhoop and water care. Order on Amazon, Flipkart, WhatsApp or Instagram.',
   alternates: { canonical: '/shop' },
 };
 

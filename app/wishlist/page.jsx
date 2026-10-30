@@ -3,6 +3,7 @@ import { products, toProductCard } from '../../src/data/products';
 
 export const metadata = {
   title: 'Wishlist',
+  description: 'Products you have saved on this device.',
   robots: { index: false, follow: true },
 };
 
