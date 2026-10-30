@@ -1,214 +1,91 @@
-'use client';
-import { useState } from 'react';
 import Link from 'next/link';
-import {
-  Camera, Play,
-  Mail, MapPin, Phone, MessageCircle,
-  ChevronDown, ChevronUp, ArrowRight
-} from 'lucide-react';
+import Icon from './Icon';
+import { SITE, whatsappLink } from '../data/site';
 
-const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const whatsappNumber = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '').replace(/\D/g, '');
+const shopLinks = [
+  { label: 'Shop all', href: '/shop' },
+  { label: 'Attars', href: '/collections/fragrance-collection/attars' },
+  { label: 'Solid perfumes', href: '/collections/fragrance-collection/solid-perfumes' },
+  { label: 'Dhoop', href: '/collections/fragrance-collection/dhoop' },
+  { label: 'Home & water care', href: '/collections/home-care-collection' },
+];
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
-    }
-  };
+const companyLinks = [
+  { label: 'Our story', href: '/about' },
+  { label: 'Gift finder', href: '/gift-finder' },
+  { label: 'Wishlist', href: '/wishlist' },
+  { label: 'Contact', href: '/contact' },
+];
+
+export default function Footer() {
+  const whatsapp = whatsappLink();
 
   return (
-    <footer className="site-footer bg-footer text-gray-300 font-body">
-
-      {/* ── Main Footer Content ── */}
-      <div className="container mx-auto px-5 md:px-10 lg:px-12 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-
-          {/* Brand Info — spans 2 columns on lg */}
-          <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="inline-block">
-              <img
-                src="/images/logo/logo.png"
-                alt="CEZLIAR — Premium Luxury Fragrance"
-                className="h-9 object-contain brightness-0 invert opacity-90"
-              />
-            </Link>
-
-            <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
-              The pinnacle of premium fragrance and home care. Crafted with rare ingredients from India's royal perfume heartlands, designed for the modern connoisseur.
-            </p>
-
-            {/* Social Media */}
-            <div className="flex gap-3 flex-wrap">
-              {[
-                { Icon: Camera, label: 'Instagram', mark: 'IG', href: 'https://instagram.com/cezliar' },
-                { label: 'Facebook', mark: 'f', href: '#' },
-                { Icon: Play, label: 'YouTube', mark: '▶', href: '#' },
-                { label: 'Twitter / X', mark: 'X', href: '#' },
-              ].map(({ Icon, label, mark, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-300 text-gray-400"
-                >
-                  {Icon ? <Icon className="w-4 h-4" /> : <span className="text-xs font-bold">{mark}</span>}
+    <footer className="bg-ivory">
+      <div className="container-site section-gap pb-8">
+        <div className="flex flex-wrap items-end justify-between gap-x-12 gap-y-6 border-b border-line pb-12">
+          <div className="flex flex-[1_1_420px] flex-col gap-3">
+            <h2 className="font-display text-[clamp(36px,4.4vw,64px)] font-light leading-none tracking-[-0.02em]">
+              Letters from <em className="italic">CEZLIAR</em>
+            </h2>
+            <p className="text-base text-muted">New blends, ritual guides and gifting ideas. Once a month, never more.</p>
+          </div>
+          {SITE.newsletterAction ? (
+            <form action={SITE.newsletterAction} method="post" className="flex flex-[1_1_380px] flex-wrap gap-2">
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+              <input id="newsletter-email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" className="min-h-[52px] flex-[1_1_220px] rounded-full border border-line bg-white px-5 text-[15px] text-ink placeholder:text-muted focus:border-forest focus:outline-none" />
+              <button type="submit" className="btn-primary min-h-[52px] px-7">Subscribe</button>
+            </form>
+          ) : (
+            <div className="flex flex-[1_1_380px] flex-wrap gap-2 sm:justify-end">
+              <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="btn-primary min-h-[52px] px-7">
+                <Icon name="instagram" size={18} /> Follow on Instagram
+              </a>
+              {whatsapp && (
+                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="btn-outline min-h-[52px] px-7">
+                  <Icon name="whatsapp" size={18} /> WhatsApp updates
                 </a>
-              ))}
-              {whatsappNumber && <a
-                href={`https://wa.me/${whatsappNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all duration-300 text-gray-400"
-              >
-                <MessageCircle className="w-4 h-4" />
-              </a>}
+              )}
             </div>
+          )}
+        </div>
 
-            {/* Payment Methods */}
-            <div>
-              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-3 font-semibold">We Accept</p>
-              <div className="flex flex-wrap gap-2">
-                {['VISA', 'MC', 'UPI', 'RuPay', 'COD', 'Net'].map((method, i) => (
-                  <span
-                    key={i}
-                    className="px-2.5 py-1 bg-gray-800 text-[9px] font-bold text-gray-300 tracking-wider rounded border border-gray-700"
-                  >
-                    {method}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-5">
-            <h4 className="text-sm font-heading font-bold text-gold tracking-wider uppercase">Quick Links</h4>
-            <ul className="space-y-2.5">
-              {[
-                { label: 'About Us', to: '/about' },
-                { label: 'Shop All', to: '/shop' },
-                { label: 'Our Story', to: '/about' },
-                { label: 'Blogs & Tips', to: '/blogs' },
-                { label: 'Contact Us', to: '/contact' },
-              ].map(({ label, to }, i) => (
-                <li key={i}>
-                  <Link
-                    href={to}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group"
-                  >
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200 text-gold" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Collections */}
-          <div className="space-y-5">
-            <h4 className="text-sm font-heading font-bold text-gold tracking-wider uppercase">Collections</h4>
-            <ul className="space-y-2.5">
-              {[
-                { label: 'Premium Attars', to: '/collections/fragrance-collection/attars' },
-                { label: 'Solid Perfumes', to: '/collections/fragrance-collection/solid-perfumes' },
-                { label: 'Luxury Dhoop', to: '/collections/fragrance-collection/dhoop' },
-                { label: 'Pro Drain Opener', to: '/collections/home-care-collection/drain-cleaner' },
-                { label: 'Water Filtration', to: '/collections/water-care-collection' },
-              ].map(({ label, to }, i) => (
-                <li key={i}>
-                  <Link
-                    href={to}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group"
-                  >
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200 text-gold" />
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-5">
-            <h4 className="text-sm font-heading font-bold text-gold tracking-wider uppercase">Contact</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm">
-                <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                <span className="text-gray-400 leading-relaxed text-xs">
-                  123 Palace Road, Heritage District,<br />
-                  Jaipur, Rajasthan 302001, India
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-gold shrink-0" />
-                <a href="tel:+911411234567" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  +91 141 123 4567
+        <div className="flex flex-wrap gap-x-14 gap-y-8 py-10">
+          <div className="flex flex-[1.4_1_260px] flex-col gap-3.5">
+            <img src="/images/logo/logo.png" alt="CEZLIAR" width={150} height={27} className="h-auto w-[150px]" />
+            <p className="max-w-[300px] text-sm leading-relaxed text-muted">Indian fragrances and home rituals. Blended in Surat, Gujarat.</p>
+            <div className="flex gap-2">
+              <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="CEZLIAR on Instagram" className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-forest hover:border-forest">
+                <Icon name="instagram" size={18} />
+              </a>
+              {whatsapp && (
+                <a href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat with CEZLIAR on WhatsApp" className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-forest hover:border-forest">
+                  <Icon name="whatsapp" size={18} />
                 </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-gold shrink-0" />
-                <a href="mailto:concierge@cezliar.com" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  concierge@cezliar.com
-                </a>
-              </li>
-            </ul>
-
-            {/* Newsletter mini */}
-            <div className="pt-2">
-              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-3 font-semibold">Newsletter</p>
-              {subscribed ? (
-                <p className="text-gold text-xs font-semibold">Thank you for subscribing! ✓</p>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex gap-0">
-                  <input
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    className="flex-grow bg-gray-800 border border-gray-700 text-white placeholder:text-gray-600 px-3 py-2.5 text-xs focus:outline-none focus:border-gold/50 transition-colors min-w-0"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-gold hover:bg-gold-dark text-white px-3 py-2.5 text-[10px] font-bold transition-colors shrink-0"
-                    aria-label="Subscribe"
-                  >
-                    ›
-                  </button>
-                </form>
               )}
             </div>
           </div>
-
+          <nav aria-label="Shop" className="flex flex-[1_1_140px] flex-col gap-2.5 text-sm">
+            <p className="mb-1 font-medium text-ink">Shop</p>
+            {shopLinks.map((l) => <Link key={l.href} href={l.href} className="text-body no-underline hover:text-forest">{l.label}</Link>)}
+          </nav>
+          <nav aria-label="Company" className="flex flex-[1_1_140px] flex-col gap-2.5 text-sm">
+            <p className="mb-1 font-medium text-ink">CEZLIAR</p>
+            {companyLinks.map((l) => <Link key={l.href} href={l.href} className="text-body no-underline hover:text-forest">{l.label}</Link>)}
+          </nav>
+          <nav aria-label="Buy on" className="flex flex-[1_1_140px] flex-col gap-2.5 text-sm">
+            <p className="mb-1 font-medium text-ink">Buy on</p>
+            <a href={SITE.amazonStore} target="_blank" rel="noopener noreferrer" className="text-body no-underline hover:text-forest">Amazon ↗</a>
+            <a href={SITE.flipkartStore} target="_blank" rel="noopener noreferrer" className="text-body no-underline hover:text-forest">Flipkart ↗</a>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="text-body no-underline hover:text-forest">Instagram ↗</a>
+          </nav>
         </div>
-      </div>
 
-      {/* ── Bottom Bar ── */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-5 md:px-10 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-600 text-center md:text-left">
-            © {new Date().getFullYear()} <span className="text-gray-500">CEZLIAR</span>. All rights reserved. Premium Fragrance &amp; Home Care — Made in India 🇮🇳
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center text-xs text-gray-600">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <span className="text-gray-700">·</span>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <span className="text-gray-700">·</span>
-            <a href="#" className="hover:text-white transition-colors">Shipping Policy</a>
-            <span className="text-gray-700">·</span>
-            <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
-          </div>
+        <div className="flex flex-wrap justify-between gap-3 text-[13px] text-muted">
+          <span>© {new Date().getFullYear()} CEZLIAR. All rights reserved.</span>
+          <span>Orders, delivery and returns are handled by Amazon and Flipkart.</span>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,58 +1,38 @@
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import Category from '../../src/site-pages/Category';
-import { products, toProductCard } from '../../src/data/products';
+import { CATEGORY_PAGES, LEGACY_CATEGORY_PATHS, getCategoryIdByPath } from '../../src/data/categories';
 
-const categories = {
-  'collections/fragrance-collection': ['Fragrance World'],
-  'collections/fragrance-collection/attars': ['Fragrance World', 'Attar'],
-  'collections/fragrance-collection/solid-perfumes': ['Fragrance World', 'Solid Perfumes'],
-  'collections/fragrance-collection/dhoop': ['Fragrance World', 'Dhoop'],
-  'collections/home-care-collection': ['Home Care'],
-  'collections/home-care-collection/drain-cleaner': ['Home Care', 'Drain Opener'],
-  'collections/water-care-collection': ['Home Care'],
-  'collections/water-care-collection/pp-spun-filter': ['Home Care', 'PP Spun Filter'],
-  'collections/water-care-collection/filter-candle': ['Home Care', 'Filter Candle'],
-  'collections/water-care-collection/filter-set': ['Home Care', 'Filter Set'],
-  'collections/water-care-collection/accessories': ['Home Care', 'Accessories'],
-  'collections/signature-collection': ['Signature Collection'],
-  'fragrance-world': ['Fragrance World'],
-  'fragrance-world/attar': ['Fragrance World', 'Attar'],
-  'fragrance-world/dhoop': ['Fragrance World', 'Dhoop'],
-  'home-care': ['Home Care'],
-  'home-care/drain-opener': ['Home Care', 'Drain Opener'],
-  'home-care/water-filter': ['Home Care', 'Water Filter'],
-};
-
-const canonicalPaths = {
-  'fragrance-world': '/collections/fragrance-collection',
-  'fragrance-world/attar': '/collections/fragrance-collection/attars',
-  'fragrance-world/dhoop': '/collections/fragrance-collection/dhoop',
-  'home-care': '/collections/home-care-collection',
-  'home-care/drain-opener': '/collections/home-care-collection/drain-cleaner',
-  'home-care/water-filter': '/collections/water-care-collection',
+const resolve = (slug) => {
+  const key = slug.join('/');
+  return { key, id: getCategoryIdByPath(`/${key}`), legacy: LEGACY_CATEGORY_PATHS[key] };
 };
 
 export function generateStaticParams() {
-  return Object.keys(categories).map((path) => ({ slug: path.split('/') }));
+  return [
+    ...Object.values(CATEGORY_PAGES).map((c) => ({ slug: c.path.slice(1).split('/') })),
+    ...Object.keys(LEGACY_CATEGORY_PATHS).map((path) => ({ slug: path.split('/') })),
+  ];
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const category = categories[slug.join('/')];
-  const title = category?.[1] || category?.[0] || 'Collection';
+  const { id } = resolve(slug);
+  if (!id) return {};
+  const config = CATEGORY_PAGES[id];
   return {
-    title: `${title} Collection`,
-    description: `Explore CEZLIAR ${title} products and collections.`,
-    alternates: { canonical: canonicalPaths[slug.join('/')] || `/${slug.join('/')}` },
+    title: config.title,
+    description: config.description,
+    alternates: { canonical: config.path },
+    openGraph: { title: `${config.title} | CEZLIAR`, description: config.description, url: config.path },
   };
 }
 
 export default async function Page({ params }) {
   const { slug } = await params;
-  const category = categories[slug.join('/')];
-  if (!category) notFound();
-  const categoryProducts = products
-    .filter((product) => product.mainCategory === category[0] && (!category[1] || product.subCategory === category[1]))
-    .map(toProductCard);
-  return <Category mainCategory={category[0]} subCategory={category[1]} products={categoryProducts} />;
+  const { id, legacy } = resolve(slug);
+  if (legacy) permanentRedirect(legacy);
+  if (!id) notFound();
+  return <Category categoryId={id} />;
 }

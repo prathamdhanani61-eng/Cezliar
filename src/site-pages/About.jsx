@@ -1,145 +1,95 @@
-'use client';
-import { motion } from 'framer-motion';
-import { Sparkles, Eye, Target, Award, Heart } from 'lucide-react';
+import Link from 'next/link';
+import { WhyCezliar } from '../components/home/HomeSections';
+import { WHY_CEZLIAR } from '../data/home';
+import { products } from '../data/products';
 
-const About = () => {
+const STEPS = [
+  { image: '/images/site/mood-candles.webp', alt: 'Musk Rijali attar among gold candles', title: 'Blended in Surat', text: 'Concentrated perfume oils, blended alcohol-free for a scent that stays close to the skin.' },
+  { image: '/images/products/Attar/Sanaya/1.jpg', alt: 'Sanaya attar in its red gift box', title: 'Packed with care', text: 'Every attar comes in a gift-ready box with gold detailing, so it is as good to give as to keep.', light: true },
+  { image: '/images/site/gift-banner.webp', alt: 'A green gift box with a copper ribbon', title: 'Delivered to your door', text: 'Order on Amazon or Flipkart and get their trusted checkout, delivery and support.', position: '78% center' },
+];
+
+export default function About() {
+  const stats = [
+    { value: products.length, label: 'products' },
+    { value: 4, label: 'collections' },
+    { value: '0%', label: 'alcohol in our attars' },
+    { value: 2, label: 'marketplaces — Amazon & Flipkart' },
+  ];
+
   return (
-    <div className="site-page-top about-page pb-24 bg-background min-h-screen">
-      <div className="container mx-auto px-6 md:px-12">
-
-        {/* Header */}
-        <div className="text-center mb-20 pt-12">
-          <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">The Cezliar Way</span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-heading font-bold text-text mt-2 mb-6"
-          >
-            The Story of Cezliar
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-1 bg-gold mx-auto mb-6"
-          ></motion.div>
+    <div className="container-site pt-5">
+      <section className="relative min-h-[600px] overflow-hidden rounded-panel bg-sand">
+        <img src="/images/site/hero-attar.webp" alt="A CEZLIAR attar bottle on a marble pedestal with agarwood and jasmine" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[70%_center]" />
+        <div className="absolute bottom-[clamp(12px,3vw,32px)] left-[clamp(12px,3vw,32px)] right-[clamp(12px,3vw,32px)] flex max-w-[600px] flex-col gap-4 rounded-card bg-ivory p-[clamp(24px,3.4vw,44px)]">
+          <p className="eyebrow">Our story</p>
+          <h1 className="font-display text-[clamp(42px,5vw,76px)] font-light leading-none tracking-[-0.02em] text-forest-ink">Rooted in India. <em className="italic">Crafted for today.</em></h1>
+          <p className="text-[17px] leading-relaxed text-body">Indian fragrances and home rituals — made with care, sold where you already shop.</p>
         </div>
+      </section>
 
-        {/* Our Story Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 mb-28">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 aspect-square max-h-[500px] rounded-3xl overflow-hidden shadow-luxury border border-gold/10 relative"
-          >
-            <img
-              src="/images/products/HeroImg/Attar.png"
-              alt="Cezliar Heritage"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-primary/5" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2"
-          >
-            <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-2 block">Our Roots</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">Redefining Luxury and Purity</h2>
-            <p className="text-base md:text-lg text-gray-700 font-body leading-relaxed mb-6">
-              CEZLIAR was born from a singular, uncompromising vision: to bridge the gap between traditional Indian artisanal heritage and modern, non-toxic chemistry. We believe that true luxury lies in the meticulous journey of creation and the absolute purity of the final formulation.
-            </p>
-            <p className="text-base text-gray-500 font-body leading-relaxed">
-              Every bottle of our concentrated attars, every stick of our natural dhoop, and every formula in our high-performance home care line is a testament to our commitment to excellence. We respect time-tested methods, utilizing hydro-distillation in copper vessels while employing modern testing to verify that no synthetic irritants or harmful compounds enter your life.
-            </p>
-          </motion.div>
+      <section className="section-gap flex flex-wrap gap-x-[clamp(32px,6vw,96px)] gap-y-8">
+        <p className="flex-[1.3_1_480px] font-display text-[clamp(28px,3vw,42px)] font-light leading-[1.3] text-forest-ink">
+          A dab of attar before you step out. Dhoop at the evening prayer. Clean water at the table. <em className="italic">Small rituals that make an Indian home feel like home.</em>
+        </p>
+        <div className="flex flex-[1_1_360px] flex-col gap-4 text-[17px] leading-[1.7] text-body">
+          <p>CEZLIAR exists to give those rituals the care they deserve. Our attars and solid perfumes are blended in Surat, Gujarat, and are completely alcohol-free — concentrated oils that sit close to the skin and last through the day.</p>
+          <p>Our dhoop is charcoal-free, so the smoke stays light enough for indoor prayer and meditation. And our home and water care is made with the same attention to quality, because a calm home is about more than how it smells.</p>
         </div>
+      </section>
 
-        {/* Vision & Mission Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-28">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white p-10 md:p-12 rounded-3xl shadow-luxury border border-gold/10 flex flex-col h-full"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-section flex items-center justify-center text-primary mb-6 border border-gold/10">
-              <Eye className="w-7 h-7" />
-            </div>
-            <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Vision</h3>
-            <p className="text-gray-600 font-body leading-relaxed text-sm md:text-base">
-              To be recognized globally as the ultimate standard of luxury Indian craftsmanship in home and body care. We envision a future where high performance and natural purity coexist seamlessly, enriching daily routines into premium, elevated rituals.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="bg-white p-10 md:p-12 rounded-3xl shadow-luxury border border-gold/10 flex flex-col h-full"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-section flex items-center justify-center text-primary mb-6 border border-gold/10">
-              <Target className="w-7 h-7" />
-            </div>
-            <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Mission</h3>
-            <p className="text-gray-600 font-body leading-relaxed text-sm md:text-base">
-              To curate and distribute organic, chemical-safe, and high-performance products by combining traditional hydro-distillation with advanced chemistry. We commit to zero compromise on sustainability, organic sourcing, and customer satisfaction.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Why Choose CEZLIAR Section */}
-        <div className="bg-section p-12 md:p-20 rounded-3xl border border-gold/10">
-          <div className="text-center mb-16">
-            <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">Our Core Values</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mt-2">Why Choose CEZLIAR</h2>
-            <div className="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+      <dl aria-label="CEZLIAR in numbers" className="mt-[clamp(48px,6vw,80px)] grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] border-y border-line">
+        {stats.map((s) => (
+          <div key={s.label} className="flex flex-col-reverse gap-1.5 py-8 pr-6">
+            <dt className="text-[15px] text-muted">{s.label}</dt>
+            <dd className="font-display text-[56px] font-light leading-none text-forest">{s.value}</dd>
           </div>
+        ))}
+      </dl>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: "Traditional Craftsmanship",
-                desc: "We work directly with heritage distillers in Kannauj and Mysore, keeping ancient, wood-fired hydro-distillation methods alive."
-              },
-              {
-                icon: Sparkles,
-                title: "Non-Toxic Formulations",
-                desc: "Our home care range is strictly charcoal-free, acid-free, and organic, ensuring maximum safety for kids and pets."
-              },
-              {
-                icon: Heart,
-                title: "Conscious Luxury",
-                desc: "From hand-cut crystal bottles to biodegradable packaging, our operations respect the planet and local farming communities."
-              }
-            ].map((value, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gold/5 flex flex-col h-full text-center items-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-section flex items-center justify-center text-primary mb-4">
-                  <value.icon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-heading font-bold text-text mb-3">{value.title}</h4>
-                <p className="text-xs text-gray-500 font-body leading-relaxed">{value.desc}</p>
-              </motion.div>
-            ))}
+      <section aria-label="Vision and mission" className="section-gap grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4">
+        <div className="flex min-h-[320px] flex-col gap-4 rounded-panel bg-forest p-[clamp(32px,4vw,56px)] text-ivory-on-forest">
+          <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-gold-light">Our vision</p>
+          <h2 className="font-display text-[clamp(30px,3vw,44px)] font-light leading-[1.12]">To bring India’s fragrance rituals into <em className="italic">every modern home.</em></h2>
+          <p className="text-base leading-relaxed text-mist">Honest products, beautiful to live with, and easy to buy wherever you shop.</p>
+        </div>
+        <div className="flex min-h-[320px] flex-col gap-4 rounded-panel bg-sand p-[clamp(32px,4vw,56px)]">
+          <p className="eyebrow">Our mission</p>
+          <h2 className="font-display text-[clamp(30px,3vw,44px)] font-light leading-[1.12]">Make fragrance and home care people <em className="italic">trust and return to.</em></h2>
+          <p className="text-base leading-relaxed text-body">Alcohol-free attars, charcoal-free dhoop and dependable home essentials — with no compromise on quality.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="about-journey" className="section-gap">
+        <div className="mb-10 flex flex-col items-center gap-3 text-center">
+          <p className="eyebrow">How we work</p>
+          <h2 id="about-journey" className="heading-section">From Surat <em className="italic">to your shelf</em></h2>
+        </div>
+        <ol className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="flex flex-col gap-4">
+              <div className={`relative aspect-4/5 overflow-hidden rounded-[999px_999px_24px_24px] ${step.light ? 'bg-white' : 'bg-sand'}`}>
+                <img src={step.image} alt={step.alt} loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={step.position ? { objectPosition: step.position } : undefined} />
+              </div>
+              <span className="font-display text-[40px] font-light leading-none text-forest">0{i + 1}</span>
+              <h3 className="font-display text-[26px]">{step.title}</h3>
+              <p className="text-[15px] leading-relaxed text-body">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <WhyCezliar items={WHY_CEZLIAR} title="Why choose" contained={false} />
+
+      <section className="section-gap">
+        <div className="flex flex-wrap items-center justify-between gap-x-12 gap-y-6 rounded-panel bg-forest p-[clamp(32px,5vw,72px)] text-ivory-on-forest">
+          <h2 className="flex-[1_1_420px] font-display text-[clamp(32px,3.6vw,52px)] font-light leading-[1.06]">Find the ritual <em className="italic">that is yours.</em></h2>
+          <div className="flex flex-wrap gap-2.5">
+            <Link href="/shop" className="btn-light min-h-[52px]">Shop all</Link>
+            <Link href="/gift-finder" className="btn-outline-light min-h-[52px]">Open gift finder</Link>
           </div>
         </div>
-
-      </div>
+      </section>
     </div>
   );
-};
-
-export default About;
+}
