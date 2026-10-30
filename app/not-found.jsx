@@ -24,7 +24,7 @@ export default function NotFound() {
           </div>
         </div>
         <div className="relative min-h-[420px] flex-[1_1_380px] bg-forest">
-          <img src="/images/site/dhoop-cutout.webp" alt="" className="absolute inset-x-[4%] bottom-0 top-[6%] h-[94%] w-[92%] object-contain object-bottom" />
+          <img src="/images/site/dhoop-cutout-480.webp" alt="" className="absolute inset-x-[4%] bottom-0 top-[6%] h-[94%] w-[92%] object-contain object-bottom" />
         </div>
       </section>
 

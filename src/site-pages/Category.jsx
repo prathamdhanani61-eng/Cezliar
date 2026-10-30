@@ -1,25 +1,27 @@
 import Link from 'next/link';
 import ArchScene from '../components/ArchScene';
 import Breadcrumbs from '../components/Breadcrumbs';
+import JsonLd, { breadcrumbJsonLd } from '../components/JsonLd';
 import ProductCard from '../components/ProductCard';
 import MarketplaceButtons from '../components/MarketplaceButtons';
 import WishlistButton from '../components/WishlistButton';
 import Faq from '../components/Faq';
 import { CATEGORY_GROUPS, CATEGORY_PAGES } from '../data/categories';
-import { products, toProductCard } from '../data/products';
+import { optimizedImage, products, toProductCard } from '../data/products';
 import { formatPrice } from '../utils/format';
 import { summarize } from '../utils/text';
+import { SITE_URL } from '../utils/site';
 
 const GROUP_ROOT = { fragrance: 'fragrances', home: 'home-care' };
 
 function CategoryVisual({ visual }) {
   if (visual.type === 'cutout') {
-    return <ArchScene cutout={visual.cutout} alt={visual.alt} scale={visual.scale} />;
+    return <ArchScene cutout={visual.cutout} alt={visual.alt} scale={visual.scale} baseline={visual.baseline} priority />;
   }
   if (visual.type === 'product') {
     return (
       <div className="absolute inset-0 flex items-center justify-center bg-white p-8">
-        <img src={visual.src} alt={visual.alt} className="h-full max-h-[380px] w-auto object-contain" />
+        <img src={optimizedImage(visual.src, 1200)} alt={visual.alt} className="h-full max-h-[380px] w-auto object-contain" />
       </div>
     );
   }
@@ -34,9 +36,9 @@ function MoodCard({ product }) {
         <Link href={url} tabIndex={-1} aria-hidden="true" className="absolute inset-0">
           <img src={product.moodImage} alt="" loading="lazy" className="h-full w-full object-cover" />
         </Link>
-        {product.image && (
+        {product.thumb && (
           <span className="absolute bottom-3.5 left-3.5 block h-[84px] w-[84px] overflow-hidden rounded-2xl border-4 border-white bg-white">
-            <img src={product.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+            <img src={product.thumb} alt="" loading="lazy" className="h-full w-full object-cover" />
           </span>
         )}
         <WishlistButton id={product.id} name={product.shortName} className="absolute right-2 top-2 bg-ivory" />
@@ -44,7 +46,7 @@ function MoodCard({ product }) {
       <div className="flex flex-1 flex-col gap-2.5 p-[22px]">
         {product.notes && <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-saffron">{product.notes}</p>}
         <div className="flex items-baseline justify-between gap-3">
-          <h2 className="font-display text-[28px]"><Link href={url} className="text-ink no-underline hover:text-forest">{product.shortName}</Link></h2>
+          <h3 className="font-display text-[28px]"><Link href={url} className="text-ink no-underline hover:text-forest">{product.shortName}</Link></h3>
           <span className="text-lg font-medium">{formatPrice(product.price)}</span>
         </div>
         <p className="text-[15px] leading-relaxed text-body">{product.summary}</p>
@@ -81,6 +83,7 @@ export default function Category({ categoryId }) {
   return (
     <div className="container-site">
       <Breadcrumbs items={crumbs} />
+      <JsonLd data={breadcrumbJsonLd(SITE_URL, crumbs)} />
 
       <section className="flex flex-wrap overflow-hidden rounded-panel bg-forest text-ivory-on-forest">
         <div className="flex flex-[1.2_1_440px] flex-col justify-center gap-5 p-[clamp(32px,5vw,72px)]">
@@ -105,7 +108,8 @@ export default function Category({ categoryId }) {
         ))}
       </nav>
 
-      <section aria-label={`${config.title} products`} className="pt-6">
+      <section aria-labelledby="category-products" className="pt-6">
+        <h2 id="category-products" className="sr-only">{config.title} products</h2>
         {cards.length === 0 && (
           <div className="rounded-tile bg-sand p-10 text-center">
             <p className="font-display text-2xl">New products are on their way.</p>
@@ -113,7 +117,7 @@ export default function Category({ categoryId }) {
           </div>
         )}
         {useMoodCards ? (
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
+          <div data-reveal-stagger className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
             {cards.map((c) => <MoodCard key={c.id} product={c} />)}
           </div>
         ) : (
@@ -124,7 +128,7 @@ export default function Category({ categoryId }) {
       </section>
 
       {steps.length > 0 && (
-        <section aria-labelledby="category-ritual" className="mt-[clamp(56px,7vw,104px)] rounded-panel bg-sand p-[clamp(32px,5vw,64px)]">
+        <section data-reveal aria-labelledby="category-ritual" className="mt-[clamp(56px,7vw,104px)] rounded-panel bg-sand p-[clamp(32px,5vw,64px)]">
           <div className="mb-8 flex flex-col gap-2.5">
             <p className="eyebrow">The ritual</p>
             <h2 id="category-ritual" className="font-display text-[clamp(34px,3.6vw,52px)] font-light leading-[1.05] tracking-[-0.02em]">{config.ritualTitle}</h2>
@@ -141,7 +145,7 @@ export default function Category({ categoryId }) {
       )}
 
       {faqs.length > 0 && (
-        <section aria-labelledby="category-faq" className="mt-[clamp(56px,7vw,104px)] flex flex-wrap gap-x-16 gap-y-8">
+        <section data-reveal aria-labelledby="category-faq" className="mt-[clamp(56px,7vw,104px)] flex flex-wrap gap-x-16 gap-y-8">
           <div className="flex flex-[1_1_320px] flex-col gap-3">
             <p className="eyebrow">Good to know</p>
             <h2 id="category-faq" className="font-display text-[clamp(34px,3.6vw,52px)] font-light leading-[1.05] tracking-[-0.02em]">Common <em className="italic">questions</em></h2>
@@ -154,7 +158,7 @@ export default function Category({ categoryId }) {
       )}
 
       {related.length > 0 && (
-        <section aria-labelledby="category-related" className="mt-[clamp(56px,7vw,104px)]">
+        <section data-reveal aria-labelledby="category-related" className="mt-[clamp(56px,7vw,104px)]">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <h2 id="category-related" className="font-display text-display-md font-light">You may also <em className="italic">like</em></h2>
             <Link href={CATEGORY_PAGES[config.related].path} className="py-3 text-[15px] font-medium no-underline">All {CATEGORY_PAGES[config.related].title.toLowerCase()} →</Link>

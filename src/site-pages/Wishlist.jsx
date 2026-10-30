@@ -16,6 +16,7 @@ export default function Wishlist({ products }) {
         <p className="eyebrow">Saved on this device</p>
         <h1 className="font-display text-display-xl font-light">Your <em className="italic">wishlist</em></h1>
       </section>
+      <h2 className="sr-only">Saved products</h2>
       {saved.length ? (
         <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-x-5 gap-y-7">
           {saved.map((p) => <ProductCard key={p.id} product={p} badge="none" />)}

@@ -89,9 +89,23 @@
   }
 }
 
+@keyframes hero-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 @layer utilities {
   .marquee-track {
     @apply animate-marquee;
+  }
+
+  .hero-progress {
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation-name: hero-progress;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
   }
 
   .marquee:hover .marquee-track {

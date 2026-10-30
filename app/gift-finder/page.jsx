@@ -4,7 +4,7 @@ import { GIFT_PRODUCT_MOODS } from '../../src/data/giftFinder';
 
 export const metadata = {
   title: 'Gift Finder',
-  description: 'Answer three quick questions and find the right CEZLIAR attar, solid perfume or dhoop to gift.',
+  description: 'Find the right CEZLIAR attar, solid perfume or dhoop to gift in three quick questions, then order it as a gift on WhatsApp.',
   alternates: { canonical: '/gift-finder' },
 };
 

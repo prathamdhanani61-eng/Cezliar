@@ -6,6 +6,7 @@ import productsData from './products.json';
 import { getProductSlug } from '../utils/product';
 import { formatMarketplaceUrl } from '../utils/url';
 import { collectionIdOf } from './categories';
+import { whatsappOrderLink } from './site';
 
 export const products = productsData;
 
@@ -14,6 +15,13 @@ export const publicFileExists = (src) => {
   if (!src) return false;
   if (!fileCache.has(src)) fileCache.set(src, fs.existsSync(path.join(process.cwd(), 'public', src)));
   return fileCache.get(src);
+};
+
+// Web-sized copy made by scripts/optimize-images.mjs, or the original photo.
+export const optimizedImage = (src, width = 640) => {
+  if (!src || !src.startsWith('/images/products/')) return src;
+  const optimized = src.replace('/images/products/', '/images/optimized/products/').replace(/\.[^.]+$/, `-${width}.webp`);
+  return publicFileExists(optimized) ? optimized : src;
 };
 
 export const getProducts = () => products;
@@ -29,26 +37,31 @@ const searchQuery = (product) => encodeURIComponent(`CEZLIAR ${product.shortName
 const amazonLink = (product) => formatMarketplaceUrl(product.amazon) || `https://www.amazon.in/s?k=${searchQuery(product)}`;
 const flipkartLink = (product) => formatMarketplaceUrl(product.flipkart) || `https://www.flipkart.com/search?q=${searchQuery(product)}`;
 
-// Every gallery image that actually exists in /public, without duplicates.
+// Every gallery photo that exists in /public, without duplicates (original paths).
 export const getProductImages = (product) => [...new Set([product.image, ...(product.images || [])])].filter(publicFileExists);
 
-export const toProductCard = (product) => ({
-  id: product.id,
-  slug: getProductSlug(product),
-  name: product.name,
-  shortName: product.shortName || product.name,
-  tagline: product.tagline || product.subCategory,
-  notes: product.notes || '',
-  moodImage: publicFileExists(product.moodImage) ? product.moodImage : '',
-  mainCategory: product.mainCategory,
-  subCategory: product.subCategory,
-  collection: collectionIdOf(product),
-  price: product.price,
-  image: publicFileExists(product.image) ? product.image : '',
-  amazon: amazonLink(product),
-  flipkart: flipkartLink(product),
-  isBestSeller: Boolean(product.isBestSeller),
-  isNewArrival: Boolean(product.isNewArrival),
-});
+export const toProductCard = (product) => {
+  const slug = getProductSlug(product);
+  return {
+    id: product.id,
+    slug,
+    name: product.name,
+    shortName: product.shortName || product.name,
+    tagline: product.tagline || product.subCategory,
+    notes: product.notes || '',
+    moodImage: publicFileExists(product.moodImage) ? product.moodImage : '',
+    mainCategory: product.mainCategory,
+    subCategory: product.subCategory,
+    collection: collectionIdOf(product),
+    price: product.price,
+    image: publicFileExists(product.image) ? optimizedImage(product.image) : '',
+    thumb: publicFileExists(product.image) ? optimizedImage(product.image, 240) : '',
+    amazon: amazonLink(product),
+    flipkart: flipkartLink(product),
+    whatsapp: whatsappOrderLink({ name: product.name, price: product.price, slug }),
+    isBestSeller: Boolean(product.isBestSeller),
+    isNewArrival: Boolean(product.isNewArrival),
+  };
+};
 
 export const cardsByIds = (ids) => ids.map(getProductById).filter(Boolean).map(toProductCard);

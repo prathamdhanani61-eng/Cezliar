@@ -14,9 +14,11 @@ export default function WishlistButton({ id, name, className = '', withLabel = f
       onClick={() => toggle(id)}
       aria-pressed={saved}
       aria-label={withLabel ? undefined : label}
-      className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-full ${saved ? 'text-forest' : 'text-ink'} ${className}`}
+      className={`inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-full transition-transform active:scale-90 ${saved ? 'text-forest' : 'text-ink'} ${className}`}
     >
-      <Icon name="heart" size={withLabel ? 18 : 20} filled={saved} />
+      <span key={saved ? 'saved' : 'empty'} className={`inline-flex ${saved ? 'animate-pop' : ''}`}>
+        <Icon name="heart" size={withLabel ? 18 : 20} filled={saved} />
+      </span>
       {withLabel && <span>{saved ? 'Saved to wishlist' : 'Save to wishlist'}</span>}
     </button>
   );

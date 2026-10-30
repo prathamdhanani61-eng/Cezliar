@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ProductCard from '../ProductCard';
+import AnimatedGrid from '../AnimatedGrid';
 
 export default function FeaturedProducts({ tabs }) {
   const [active, setActive] = useState(tabs[0].id);
@@ -31,11 +31,14 @@ export default function FeaturedProducts({ tabs }) {
           ))}
         </div>
       </div>
-      <div id="featured-panel" role="tabpanel" aria-labelledby={`featured-tab-${current.id}`} className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-x-5 gap-y-7">
-        {current.products.map((product) => (
-          <ProductCard key={product.id} product={product} badge={current.id === 'all' ? 'new' : 'auto'} />
-        ))}
-      </div>
+      <AnimatedGrid
+        id="featured-panel"
+        role="tabpanel"
+        aria-labelledby={`featured-tab-${current.id}`}
+        products={current.products}
+        badge={current.id === 'all' ? 'new' : 'auto'}
+        className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-x-5 gap-y-7"
+      />
     </section>
   );
 }

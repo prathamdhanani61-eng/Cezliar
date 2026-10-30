@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Breadcrumbs from '../components/Breadcrumbs';
+import JsonLd, { breadcrumbJsonLd } from '../components/JsonLd';
 import Icon from '../components/Icon';
 import ProductCard from '../components/ProductCard';
 import MarketplaceButtons from '../components/MarketplaceButtons';
@@ -8,10 +9,11 @@ import ProductShareButton from '../components/ProductShareButton';
 import ProductGallery from '../components/product/ProductGallery';
 import ProductTabs from '../components/product/ProductTabs';
 import { CATEGORY_PAGES } from '../data/categories';
-import { getProductImages, toProductCard } from '../data/products';
-import { whatsappLink } from '../data/site';
+import { getProductImages, optimizedImage, toProductCard } from '../data/products';
+import { SITE, whatsappOrderLink } from '../data/site';
 import testimonials from '../data/testimonials.json';
 import { formatPrice } from '../utils/format';
+import { SITE_URL } from '../utils/site';
 
 // Most specific collection page first, broad ones last.
 const CATEGORY_PRIORITY = ['attars', 'solid-perfumes', 'dhoop', 'drain-care', 'pp-spun', 'filter-candle', 'filter-set', 'accessories', 'water-care', 'fragrances', 'home-care'];
@@ -22,13 +24,14 @@ const REVIEW_BY_SUBCATEGORY = { Attar: 4, 'Solid Perfumes': 4, Dhoop: 2, 'Drain 
 
 export default function ProductDetail({ product, relatedProducts }) {
   const card = toProductCard(product);
-  const images = getProductImages(product);
+  const images = getProductImages(product).map((src) => ({ full: optimizedImage(src, 1200), thumb: optimizedImage(src, 640) }));
   const categoryId = CATEGORY_PRIORITY.find((id) => CATEGORY_PAGES[id].match(product));
   const category = CATEGORY_PAGES[categoryId];
   const root = CATEGORY_PAGES[GROUP_ROOT[category.group]];
   const facts = Object.entries(product.specifications || {}).slice(0, 3);
   const review = testimonials.find((t) => t.id === REVIEW_BY_SUBCATEGORY[product.subCategory]);
-  const whatsapp = whatsappLink(`Hello CEZLIAR! I have a question about ${product.name}.`);
+  const orderRef = { name: product.name, price: product.price, slug: card.slug };
+  const giftOrder = whatsappOrderLink(orderRef, { gift: true });
   const badges = [card.isBestSeller && 'Bestseller', card.isNewArrival && 'New'].filter(Boolean);
   const isFragrance = product.mainCategory === 'Fragrance World';
 
@@ -39,6 +42,7 @@ export default function ProductDetail({ product, relatedProducts }) {
   return (
     <div className="container-site">
       <Breadcrumbs items={crumbs} />
+      <JsonLd data={breadcrumbJsonLd(SITE_URL, crumbs)} />
 
       <section className="flex flex-wrap items-start gap-x-[clamp(32px,5vw,72px)] gap-y-8">
         <ProductGallery images={images} name={product.name} badges={badges} />
@@ -51,7 +55,7 @@ export default function ProductDetail({ product, relatedProducts }) {
           </div>
           <div className="flex flex-wrap items-baseline gap-3.5">
             <span className="font-display text-4xl">{formatPrice(product.price)}</span>
-            <span className="text-[15px] text-muted">Price on Amazon and Flipkart may vary</span>
+            <span className="text-[15px] text-muted">Marketplace prices may vary</span>
           </div>
           <p className="text-[17px] leading-[1.7] text-body">{product.description}</p>
 
@@ -75,17 +79,27 @@ export default function ProductDetail({ product, relatedProducts }) {
 
           <MarketplaceButtons product={card} size="lg" />
 
+          <div className="flex flex-col gap-3 rounded-[18px] border border-line-soft bg-white p-4">
+            <p className="text-sm font-medium text-ink">Or order directly from us</p>
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2">
+              <a href={card.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary min-h-[50px] px-4">
+                <Icon name="whatsapp" size={18} /> Order on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a href={SITE.instagramDm} target="_blank" rel="noopener noreferrer" className="btn-outline min-h-[50px] px-4">
+                <Icon name="instagram" size={18} /> Order on Instagram<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+            <a href={giftOrder} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 text-[15px] font-medium no-underline">
+              <Icon name="gift" size={18} /> Sending this as a gift? Order it on WhatsApp ({SITE.whatsappDisplay})<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
             <WishlistButton id={card.id} name={card.shortName} withLabel className="min-w-0 justify-start px-0" />
             <ProductShareButton name={product.name} url={`/product/${card.slug}`} />
-            {whatsapp && (
-              <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 no-underline">
-                <Icon name="whatsapp" size={18} /> Ask on WhatsApp
-              </a>
-            )}
           </div>
           <p className="rounded-[14px] bg-sand px-4 py-3.5 text-sm leading-normal text-body">
-            Delivery, payment and returns are handled by Amazon and Flipkart.
+            Amazon and Flipkart handle delivery, payment and returns for marketplace orders. WhatsApp and Instagram orders are confirmed with you directly.
             {product.specifications?.Origin && ` Made in ${product.specifications.Origin.replace('Surat Gujarat', 'Surat, Gujarat')}.`}
           </p>
         </div>
@@ -99,7 +113,7 @@ export default function ProductDetail({ product, relatedProducts }) {
       />
 
       {review && (
-        <section aria-label="Customer review" className="mt-[clamp(56px,7vw,96px)] flex flex-wrap items-center gap-x-16 gap-y-6 rounded-panel bg-forest p-[clamp(32px,5vw,64px)] text-ivory-on-forest">
+        <section data-reveal aria-label="Customer review" className="mt-[clamp(56px,7vw,96px)] flex flex-wrap items-center gap-x-16 gap-y-6 rounded-panel bg-forest p-[clamp(32px,5vw,64px)] text-ivory-on-forest">
           <div className="flex flex-[0_1_260px] flex-col gap-2">
             <p className="font-display text-[44px] font-light leading-[1.05]">What customers <em className="italic">say</em></p>
             <span role="img" aria-label={`Rated ${review.rating} out of 5`} className="text-lg tracking-[4px] text-gold-light">{'★'.repeat(review.rating)}</span>
@@ -112,7 +126,7 @@ export default function ProductDetail({ product, relatedProducts }) {
       )}
 
       {relatedProducts.length > 0 && (
-        <section aria-labelledby="related-heading" className="mt-[clamp(56px,7vw,96px)]">
+        <section data-reveal aria-labelledby="related-heading" className="mt-[clamp(56px,7vw,96px)]">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <h2 id="related-heading" className="font-display text-display-md font-light">
               {isFragrance ? <>Complete the <em className="italic">ritual</em></> : <>You may also <em className="italic">need</em></>}
