@@ -1,20 +1,17 @@
+'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import blogsData from '../data/blogs.json';
+import Link from 'next/link';
 import Button from '../components/Button';
 import { ArrowLeft, Clock, User, Calendar, ArrowRight, BookOpen } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
 
 const Blogs = () => {
   const [selectedBlog, setSelectedBlog] = useState(null);
 
-  useSEO({
-    title: selectedBlog ? selectedBlog.title : 'Blogs & Chronicles',
-    description: selectedBlog ? selectedBlog.excerpt : 'Read our stories, performance guides, and updates on luxury traditional Indian attars and home care safety.'
-  });
 
   return (
-    <div className="pt-24 pb-24 bg-background min-h-screen">
+    <div className="site-page-top blog-page pb-24 bg-background min-h-screen">
       <div className="container mx-auto px-6 md:px-12">
         <AnimatePresence mode="wait">
           {!selectedBlog ? (
@@ -82,12 +79,12 @@ const Blogs = () => {
                         <span className="text-xs font-semibold text-gray-400 font-body flex items-center gap-1">
                           <User className="w-3.5 h-3.5 text-gold" /> By {blog.author.split(' ')[0]}
                         </span>
-                        <button
-                          onClick={() => setSelectedBlog(blog)}
+                        <Link
+                          href={`/blogs/${blog.slug.trim()}`}
                           className="text-xs font-bold text-gold hover:text-primary uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all"
                         >
                           Read Article <ArrowRight className="w-4.5 h-4.5" />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </motion.div>

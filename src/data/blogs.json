@@ -7,7 +7,7 @@
     "readTime": "5 min read",
     "author": "Dr. Aarav Mehta",
     "excerpt": "Discover how Kannauj, the perfume capital of India, continues to produce the world's most luxurious and long-lasting attars through hydro-distillation.",
-    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23F4EFE6'/%3E%3Ccircle cx='400' cy='250' r='100' fill='%230F4D3C' fill-opacity='0.05'/%3E%3Ctext x='50%25' y='50%25' font-family='serif' font-size='32' fill='%230F4D3C' text-anchor='middle' font-weight='bold'%3EKANNAUJ ART%3C/text%3E%3C/svg%3E",
+    "image": "/images/products/HeroImg/Attar.png",
     "paragraphs": [
       "Nestled along the banks of the Ganges River, the ancient city of Kannauj has earned its title as the Grasse of the East. For over a thousand years, master craftsmen here have captured the scent of rain-soaked earth, royal agarwood, and fresh damask roses in copper pots called degs.",
       "Unlike modern synthetic colognes, traditional Indian attars are concentrated perfume oils containing zero alcohol. They are distilled directly into a base of pure sandalwood oil or other premium carrier oils. This age-old hydro-distillation process ensures that the scent notes do not immediately evaporate but instead blend with the natural warmth of your skin.",
@@ -23,7 +23,7 @@
     "readTime": "4 min read",
     "author": "Priya Sen",
     "excerpt": "Many commercial incense sticks release harmful carbon particulate matter. Learn how pure charcoal-free dhoop purifies the air without toxic smoke.",
-    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23F8F6F1'/%3E%3Ccircle cx='400' cy='250' r='100' fill='%23C9A227' fill-opacity='0.05'/%3E%3Ctext x='50%25' y='50%25' font-family='serif' font-size='32' fill='%23C9A227' text-anchor='middle' font-weight='bold'%3ECHARCOAL FREE%3C/text%3E%3C/svg%3E",
+    "image": "/images/products/HeroImg/Dhoop.png",
     "paragraphs": [
       "Incense has been a cornerstone of Indian homes and spiritual practices for millennia. However, in recent decades, mass manufacturing has introduced cheap charcoal, chemical binding agents, and synthetic fragrance oils into commercial incense sticks.",
       "When burned, charcoal incense produces heavy black smoke rich in carbon monoxide and respiratory irritants. For households with children, elderly members, or pets, this smoke can compromise indoor air quality.",
@@ -39,7 +39,7 @@
     "readTime": "3 min read",
     "author": "Dr. Sanjay Nair",
     "excerpt": "Learn the science behind modern plumbing blockages and how to clear drains without damaging your pipes or inhaling toxic fumes.",
-    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23F4EFE6'/%3E%3Ccircle cx='400' cy='250' r='100' fill='%232D2D2D' fill-opacity='0.05'/%3E%3Ctext x='50%25' y='50%25' font-family='serif' font-size='32' fill='%232D2D2D' text-anchor='middle' font-weight='bold'%3ESAFE PLUMBING%3C/text%3E%3C/svg%3E",
+    "image": "/images/products/drain-opener.webp",
     "paragraphs": [
       "Every household faces clogged drains at some point. The instinct is often to grab the strongest chemical opener available, pour it down, and hope for the best. Unfortunately, many traditional acid-based openers generate extreme heat that can melt PVC pipes and damage metal plumbing joints.",
       "Additionally, the acidic vapors produced are dangerous to inhale, creating potential health risks during use.",

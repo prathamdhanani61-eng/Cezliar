@@ -1,14 +1,10 @@
+'use client';
 import { motion } from 'framer-motion';
 import { Sparkles, Eye, Target, Award, Heart } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
 
 const About = () => {
-  useSEO({
-    title: 'About Us - Our Story & Values',
-    description: 'Learn about the story, vision, mission, and traditional Kannauj perfumery craftsmanship of CEZLIAR Organics.'
-  });
   return (
-    <div className="pt-24 pb-24 bg-background min-h-screen">
+    <div className="site-page-top about-page pb-24 bg-background min-h-screen">
       <div className="container mx-auto px-6 md:px-12">
 
         {/* Header */}
@@ -38,7 +34,7 @@ const About = () => {
             className="w-full lg:w-1/2 aspect-square max-h-[500px] rounded-3xl overflow-hidden shadow-luxury border border-gold/10 relative"
           >
             <img
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Crect width='800' height='800' fill='%23F4EFE6'/%3E%3Ccircle cx='400' cy='400' r='200' fill='%230F4D3C' fill-opacity='0.05'/%3E%3Ctext x='50%25' y='50%25' font-family='serif' font-size='40' fill='%230F4D3C' text-anchor='middle' font-weight='bold'%3EOur Story%3C/text%3E%3C/svg%3E"
+              src="/images/products/HeroImg/Attar.png"
               alt="Cezliar Heritage"
               className="w-full h-full object-cover"
             />

@@ -1,14 +1,10 @@
+'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, CheckCircle, Clock } from 'lucide-react';
 import Button from '../components/Button';
-import { useSEO } from '../hooks/useSEO';
 
 const Contact = () => {
-  useSEO({
-    title: 'Contact Concierge',
-    description: 'Contact the CEZLIAR boutique team. Reach out for luxury product details, press inquiries, or support requests.'
-  });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -34,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pb-24 bg-background min-h-screen">
+    <div className="site-page-top contact-page pb-24 bg-background min-h-screen">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Header */}
