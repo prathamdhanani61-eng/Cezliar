@@ -1,223 +1,133 @@
 'use client';
+
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, CheckCircle, Clock } from 'lucide-react';
-import Button from '../components/Button';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Icon from '../components/Icon';
+import MarketplaceBand from '../components/MarketplaceBand';
+import { SITE, whatsappLink } from '../data/site';
 
-const Contact = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
-  });
+const TOPICS = ['Product question', 'Gifting help', 'An order on Amazon or Flipkart', 'Bulk or corporate gifting', 'Something else'];
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+const QUICK_ANSWERS = [
+  { q: 'Where can I buy?', a: 'All CEZLIAR products are sold on Amazon and Flipkart. Each product page links straight to its listing.' },
+  { q: 'Questions about an order?', a: 'Delivery, returns and refunds are handled by the marketplace you ordered from — start from your order page there.' },
+  { q: 'Are the attars alcohol-free?', a: 'Yes — every attar and solid perfume is 100% alcohol-free and lasts 8–12 hours on skin.' },
+];
 
-  const handleSubmit = (e) => {
+export default function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', topic: TOPICS[0], message: '' });
+  const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
+  const canSend = Boolean(SITE.whatsappNumber || SITE.email);
+  const chat = whatsappLink('Hello CEZLIAR!');
+
+  const onSubmit = (e) => {
     e.preventDefault();
-    if (formData.firstName && formData.email && formData.message) {
-      setFormSubmitted(true);
-      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    const lines = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      ...(form.phone ? [`Phone: ${form.phone}`] : []),
+      `Topic: ${form.topic}`,
+      '',
+      form.message,
+    ].join('\n');
+    if (SITE.whatsappNumber) {
+      window.open(whatsappLink(`Hello CEZLIAR!\n${lines}`), '_blank', 'noopener');
+    } else if (SITE.email) {
+      window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(`${form.topic} — ${form.name}`)}&body=${encodeURIComponent(lines)}`;
     }
   };
 
+  const details = [
+    SITE.email && { icon: 'mail', label: 'Email', value: SITE.email, href: `mailto:${SITE.email}` },
+    SITE.phone && { icon: 'phone', label: 'Phone', value: SITE.phone, href: `tel:${SITE.phone.replace(/[^\d+]/g, '')}` },
+    SITE.hours && { icon: 'clock', label: 'Hours', value: SITE.hours },
+    SITE.address && { icon: 'pin', label: 'Address', value: SITE.address },
+  ].filter(Boolean);
+
   return (
-    <div className="site-page-top contact-page pb-24 bg-background min-h-screen">
-      <div className="container mx-auto px-6 md:px-12">
-        
-        {/* Header */}
-        <div className="text-center mb-20 pt-12">
-          <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">Concierge Services</span>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-heading font-bold text-text mt-2 mb-6"
-          >
-            Get in Touch
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-1 bg-gold mx-auto mb-6"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-600 max-w-2xl mx-auto font-body leading-relaxed"
-          >
-            We would love to hear from you. Our dedicated concierge team is available to assist you with product details, order inquiries, or brand collaborations.
-          </motion.p>
+    <div className="container-site">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+
+      <section className="flex flex-wrap items-end justify-between gap-x-12 gap-y-4 pb-10 pt-4">
+        <div className="flex flex-[1_1_520px] flex-col gap-3">
+          <p className="eyebrow">Contact us</p>
+          <h1 className="font-display text-display-xl font-light">We would love to <em className="italic">hear from you.</em></h1>
+        </div>
+        <p className="max-w-[440px] flex-[1_1_340px] text-[17px] leading-relaxed text-body">
+          Questions about a scent, a gift or an order? Write to us{SITE.whatsappNumber ? ' — or for the quickest reply, message us on WhatsApp' : ''}.
+        </p>
+      </section>
+
+      <section className="flex flex-wrap items-stretch gap-6">
+        <div className="flex min-w-0 flex-[1_1_380px] flex-col gap-3">
+          <div className="flex flex-col gap-3.5 rounded-tile bg-forest p-7 text-ivory-on-forest">
+            <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-ivory-on-forest text-forest">
+              <Icon name={chat ? 'whatsapp' : 'instagram'} size={24} />
+            </span>
+            <h2 className="font-display text-[26px]">{chat ? 'Chat on WhatsApp' : 'Message us on Instagram'}</h2>
+            <p className="text-[15px] leading-relaxed text-mist">The fastest way to get help with products, gifting and orders.</p>
+            <a href={chat || SITE.instagram} target="_blank" rel="noopener noreferrer" className="btn-light self-start">
+              {chat ? 'Start a chat' : 'Open Instagram'} <Icon name="arrow-right" size={16} />
+            </a>
+          </div>
+          {details.length > 0 && (
+            <ul className="rounded-tile border border-line-soft bg-white px-6 py-2">
+              {details.map((d) => (
+                <li key={d.label} className="flex items-start gap-4 border-b border-line-soft py-[18px] last:border-b-0">
+                  <Icon name={d.icon} size={22} className="mt-0.5 flex-none text-forest" />
+                  <div>
+                    <p className="mb-0.5 text-[13px] text-muted">{d.label}</p>
+                    {d.href ? <a href={d.href} className="text-base no-underline">{d.value}</a> : <p className="text-base leading-normal">{d.value}</p>}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 max-w-6xl mx-auto">
-          {/* Contact Info */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="w-full lg:w-1/3"
-          >
-            <div className="bg-white p-10 rounded-3xl shadow-luxury h-full border border-gold/5 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-heading font-bold text-primary mb-8">Boutique Office</h3>
-                
-                <div className="space-y-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-section flex items-center justify-center shrink-0 border border-gold/10">
-                      <MapPin className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-text mb-1 text-base">Jaipur Flagship</h4>
-                      <p className="text-gray-500 text-sm font-body leading-relaxed">
-                        123 Palace Road,<br/>
-                        Heritage District,<br/>
-                        Jaipur, Rajasthan 302001, India
-                      </p>
-                    </div>
-                  </div>
+        <form onSubmit={onSubmit} className="flex min-w-0 flex-[1.4_1_480px] flex-col gap-5 rounded-tile border border-line-soft bg-white p-[clamp(24px,3.4vw,44px)]">
+          <h2 className="font-display text-[clamp(28px,2.6vw,38px)] font-light">Send us a <em className="italic">message</em></h2>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
+            <label className="flex flex-col gap-2 text-sm font-medium">Your name
+              <input required type="text" autoComplete="name" value={form.name} onChange={update('name')} placeholder="Full name" className="field font-normal" />
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium">Email
+              <input required type="email" autoComplete="email" value={form.email} onChange={update('email')} placeholder="you@example.com" className="field font-normal" />
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium"><span>Phone <span className="font-normal text-muted">(optional)</span></span>
+              <input type="tel" autoComplete="tel" value={form.phone} onChange={update('phone')} placeholder="+91" className="field font-normal" />
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium">Topic
+              <select value={form.topic} onChange={update('topic')} className="field font-normal">
+                {TOPICS.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </label>
+          </div>
+          <label className="flex flex-col gap-2 text-sm font-medium">Message
+            <textarea required rows={6} value={form.message} onChange={update('message')} placeholder="How can we help?" className="field resize-y py-3.5 font-normal" />
+          </label>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-muted">
+              {SITE.whatsappNumber ? 'Your message opens in WhatsApp, ready to send.' : SITE.email ? 'Your message opens in your email app, ready to send.' : 'Online messages are being set up — please reach us on Instagram for now.'}
+            </p>
+            <button type="submit" disabled={!canSend} className="btn-primary min-h-[54px] px-8 disabled:cursor-not-allowed disabled:opacity-50">Send message</button>
+          </div>
+        </form>
+      </section>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-section flex items-center justify-center shrink-0 border border-gold/10">
-                      <Phone className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-text mb-1 text-base">Call Concierge</h4>
-                      <p className="text-gray-500 text-sm font-body">+91 141 123 4567</p>
-                      <span className="text-gray-400 text-xs font-body block mt-1 flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" /> Mon-Sat 10am-7pm IST
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-section flex items-center justify-center shrink-0 border border-gold/10">
-                      <Mail className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-text mb-1 text-base">Electronic Mail</h4>
-                      <p className="text-gray-500 text-sm font-body">concierge@cezliar.com</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-8 border-t border-gray-100 mt-12 text-center lg:text-left">
-                <span className="text-gold font-bold uppercase tracking-[0.2em] text-[10px] block mb-1">Authentic Quality</span>
-                <p className="text-[11px] text-gray-400 font-body">CEZLIAR is a registered brand of CEZLIAR Organics Pvt. Ltd.</p>
-              </div>
+      <section aria-labelledby="contact-faq" className="mt-[clamp(56px,7vw,96px)] rounded-panel bg-sand p-[clamp(32px,5vw,64px)]">
+        <h2 id="contact-faq" className="mb-7 font-display text-display-md font-light">Quick <em className="italic">answers</em></h2>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
+          {QUICK_ANSWERS.map((item) => (
+            <div key={item.q} className="flex flex-col gap-2 rounded-card bg-ivory p-6">
+              <h3 className="font-display text-[21px]">{item.q}</h3>
+              <p className="text-[15px] leading-relaxed text-body">{item.a}</p>
             </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="w-full lg:w-2/3"
-          >
-            <div className="bg-white p-10 rounded-3xl shadow-luxury border border-gold/5">
-              <h3 className="text-2xl font-heading font-bold text-primary mb-8">Send a Message</h3>
-              
-              <AnimatePresence mode="wait">
-                {!formSubmitted ? (
-                  <motion.form 
-                    key="form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onSubmit={handleSubmit}
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-wider text-gold">First Name *</label>
-                        <input 
-                          type="text" 
-                          name="firstName"
-                          required
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold bg-background transition-colors font-body text-sm" 
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-wider text-gold">Last Name</label>
-                        <input 
-                          type="text" 
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold bg-background transition-colors font-body text-sm" 
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-wider text-gold">Email Address *</label>
-                      <input 
-                        type="email" 
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold bg-background transition-colors font-body text-sm" 
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-wider text-gold">Message *</label>
-                      <textarea 
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows="5" 
-                        placeholder="Write your inquiry here..."
-                        className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold bg-background transition-colors resize-none font-body text-sm"
-                      ></textarea>
-                    </div>
-
-                    <Button variant="primary" size="lg" type="submit" className="w-full uppercase tracking-widest font-bold text-xs py-4.5">
-                      Submit Inquiry
-                    </Button>
-                  </motion.form>
-                ) : (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-center py-16 flex flex-col items-center"
-                  >
-                    <CheckCircle className="w-16 h-16 text-gold mb-6" />
-                    <h3 className="text-2xl font-heading font-bold text-primary mb-3">Message Received</h3>
-                    <p className="text-gray-500 font-body max-w-md mx-auto leading-relaxed mb-8">
-                      Thank you for contacting the CEZLIAR Concierge. A representative will review your inquiry and respond to your email address within 24 business hours.
-                    </p>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => setFormSubmitted(false)}
-                      className="uppercase tracking-widest text-xs py-3 px-8"
-                    >
-                      Send Another Message
-                    </Button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </motion.div>
+          ))}
         </div>
+      </section>
 
-      </div>
+      <MarketplaceBand />
     </div>
   );
-};
-
-export default Contact;
+}

@@ -2,9 +2,11 @@ import Shop from '../../src/site-pages/Shop';
 import { products, toProductCard } from '../../src/data/products';
 
 export const metadata = {
-  title: 'Shop All Collections',
-  description: 'Explore CEZLIAR attars, dhoop, solid perfumes, water filters, and home care products.',
+  title: 'Shop All',
+  description: 'Shop CEZLIAR alcohol-free attars, solid perfumes, charcoal-free dhoop, drain care and water filters — available on Amazon and Flipkart.',
   alternates: { canonical: '/shop' },
 };
 
-export default function Page() { return <Shop products={products.map(toProductCard)} />; }
+export default function Page() {
+  return <Shop products={products.map(toProductCard)} />;
+}

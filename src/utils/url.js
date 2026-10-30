@@ -36,8 +36,10 @@ export const formatMarketplaceUrl = (url) => {
     const host = urlObj.hostname.toLowerCase();
     const path = urlObj.pathname;
     
-    const isAmazonBase = (host === 'amazon.in' || host === 'www.amazon.in') && (path === '/' || path === '');
-    const isFlipkartBase = (host === 'flipkart.com' || host === 'www.flipkart.com') && (path === '/' || path === '');
+    // A bare homepage or a "/cezliar" path is a placeholder, not a product listing.
+    const isPlaceholderPath = path === '/' || path === '' || /^\/cezliar\/?$/i.test(path);
+    const isAmazonBase = (host === 'amazon.in' || host === 'www.amazon.in') && isPlaceholderPath;
+    const isFlipkartBase = (host === 'flipkart.com' || host === 'www.flipkart.com') && isPlaceholderPath;
     
     if (isAmazonBase || isFlipkartBase) {
       return '';
